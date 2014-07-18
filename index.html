@@ -371,7 +371,7 @@ font-family:BWHaasRegular
     <div class="slide-inner">
       <h2 class="question"><%= q.question %></h3>
       <% _.each(q.choices, function(choice) { %>
-        <button data-points="<%=choice.points%>"><%= choice.button %></button>
+        <button data-points="<%=choice.points%>" data-text="<%=choice.text%>"><%= choice.button %></button>
       <% }); %>
       <p></p>
     </div>
