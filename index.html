@@ -25,309 +25,10 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/h5bp.css">
   <link rel="stylesheet" href="css/bbw.css">
-  <link rel="stylesheet" href="css/charts.css">
   <script src="js/vendor/modernizr-2.6.2.min.js"></script>
   <script src="js/vendor/iscroll.js"></script>
   <script src="js/vendor/enquire.min.js"></script>
 </head>
-
-<style type="text/css">
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html {
-  -ms-touch-action: none;
-  width: 100%;
-  height: 100%;
-}
-
-body, ul, li {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-body {
-  font-size: 12px;
-  font-family: helvetica, arial;
-  color: black;
-  overflow: hidden; /* this is important to prevent the whole page to bounce */
-  width: 100%;
-  height: 100%;
-  background: white;
-}
-
-#viewport {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-#wrapper {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-}
-
-#scroller {
-  position: absolute;
-  z-index: 1;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  height: 100%;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-  -o-text-size-adjust: none;
-  text-size-adjust: none;
-}
-
-.slide {
-  height: 90%;
-  height: calc(100% - 40px);
-  float: left;
-  font-family: BWHaasRegular;
-  text-align: center;
-  font-size: 13pt;
-  position: relative;
-  text-shadow: #fff 1px 1px 0px;
-}
-
-.slide-inner {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-}
-
-.slide svg {
-  position: absolute;
-  top:0;
-  left:0;
-  z-index: -1;
-}
-
-.axis line, .axis path {
-  fill: none;
-  stroke: none;
-}
-
-.y.axis .tick line {
-  stroke: #eee;
-}
-
-.y.axis {
-  font-size: 10pt;
-}
-
-h2 {
-  font-family: BWHaasHead;
-  font-size: 16pt;
-  color: black;
-}
-
-h2.question {
-  background: #000;
-  color: white;
-  border-radius: 9px;
-  border: 2px solid black;
-  text-transform: uppercase;
-  padding: 10px;
-  font-family: 'Arial Narrow';
-  font-weight: bold;
-  text-shadow: none;
-  margin-bottom: 20px;
-}
-
-#title {
-  margin: 0;
-  font-size: 20pt;
-}
-
-.preview {
-  text-align: center;
-}
-
-#indicator {
-  position: absolute;
-  z-index: 1;
-  bottom: 0px;
-  width: 100%;
-  height: 5px;
-}
-
-#dotty {
-  position: absolute;
-  height: 5px;
-  background: #666;
-}
-
-.icon {
-  z-index:-1;
-  width: 60px;
-}
-
-button {
-  background: #ddd;
-  border-radius: 10px;
-  border: 3px solid black;
-  text-transform: uppercase;
-  padding: 10px;
-  font-family: 'Arial Narrow';
-  font-weight: bold;
-}
-
-button[data-points="-1"] {
-  background: #fcc;
-}
-
-button[data-points="1"] {
-  background: #cfc;
-}
-
-button:hover {
-  -webkit-animation: radiate 1s linear;
-  -webkit-animation-iteration-count: infinite;
-  border-style: double;
-  border-width: 3px;
-}
-@-webkit-keyframes radiate {
-  0% {border-radius: 10px;}
-  25% {border-radius: 30px;}
-  50% {border-radius: 10px;}
-  75% {border-radius: 0px;}
-  100% {border-radius: 10px;}
-}
-
-/* thx http://jsfiddle.net/mandynicole/7xrKP/ */
-.pulser {
-    border: 3px solid #f0f;
-    -webkit-border-radius: 30px;
-    height: 35px;
-    width: 35px;
-    position: absolute;
-    -webkit-animation: pulsate 1s ease-out;
-    -webkit-animation-iteration-count: infinite;
-    opacity: 0.0
-}
-@-webkit-keyframes pulsate {
-    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
-    50% {opacity: 1.0;}
-    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
-}
-
-.nav-arrow-wrapper .pulser {
-  right:3px;
-  top:2px;
-  z-index:-1;
-}
-
-#nav {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 9;
-  pointer-events: none;
-}
-
-#nav .nav-arrow-wrapper {
-  position: absolute;
-  pointer-events: auto;
-  cursor: pointer;
-  bottom: 0;
-  top: auto;
-  z-index: 9;
-  height: 40px;
-}
-
-#nav .nav-arrow-wrapper img {
-  height: 40px;
-  width: 40px;
-}
-
-#nav #prev {
-  -webkit-transform: rotate(90deg);
-  left: 0;
-}
-
-#nav #next {
-  -webkit-transform: rotate(-90deg);
-  right: 0;
-}
-
-@media (max-width: 360px) {
-  /* mobile only */
-
-}
-
-@media (min-width: 361px) {
-  /* desktop view */
-
-  #nav {
-    display: inherit !important;
-  }
-
-  #map-link {
-    display: none;
-  }
-
-  #nav .pulser {
-    display: none;
-  }
-
-  #viewport {
-    width: 100%;
-    height: 480px;
-    background: none;
-    top: 20%;
-  }
-
-  #wrapper {
-    width: 320px;
-    height: 100%;
-    background: none;
-  }
-
-  #scroller {
-    height: 100%;
-  }
-
-  #nav .nav-arrow-wrapper {
-    top: 40%;
-    bottom: auto;
-    opacity: 0.5;
-  }
-  #nav .nav-arrow-wrapper:hover {
-    opacity: 1;
-  }
-  #nav .nav-arrow-wrapper img {
-    width: 100px;
-    height: 100px;
-  }
-
-  #nav .nav-arrow-wrapper .pulser {
-    width: 60px;
-    height: 60px;
-    right: 20px;
-    top: 15px;
-  }
-
-}
-
-</style>
 
 <!--
 Body classes:
@@ -367,13 +68,16 @@ font-family:BWHaasRegular
   </div>
 
   <script type="text/html" id="quizTemplate">
-  <div class="slide">
+  <div class="slide question" data-slideindex="<%=i%>">
     <div class="slide-inner">
       <h2 class="question"><%= q.question %></h3>
       <% _.each(q.choices, function(choice) { %>
-        <button data-points="<%=choice.points%>" data-text="<%=choice.text%>"><%= choice.button %></button>
+        <button class="choice" data-points="<%=choice.points%>" data-text="<%=choice.text%>" style="position:relative;">
+          <%= choice.button %>
+          <div class="points"><%=choice.points%></div>
+        </button>
       <% }); %>
-      <p></p>
+      <p class="choice-text"></p>
     </div>
   </div>
   </script>
@@ -384,6 +88,7 @@ font-family:BWHaasRegular
       <a href="http://businessweek.com/" title="Bloomberg Businessweek"><img src="apple-touch-icon-precomposed.png" width="50"></a>
       <h2 id="title">Can a woman ever win at work?</h2>
       <p id="description">It’s hard enough for a working woman, and now a new study from UNC’s Kenan Flager School of Business found many struggles over promotion and raises may be out of a gal’s control. Take this easy quiz to determine just how screwed you might be, culled from the endless academic research on office gender dynamics.</p>
+      <button id="start">Start</button>
     </div>
   </div>
   </script>
@@ -392,10 +97,10 @@ font-family:BWHaasRegular
   <div class="slide" id="outro">
     <div class="slide-inner preview">
       <a href="http://businessweek.com/" title="Bloomberg Businessweek"><img src="apple-touch-icon-precomposed.png" width="50"></a>
-      <h2 id="title">Read more</h2>
+      <h2 id="title">Summary & results</h2>
       <p id="description">Outro description text</p>
       <a id="story-link" href="graphic.html"><button>Call to action</button></a>
-      <div class="data-credit">Data: ???</div>
+      <div class="data-credit">Sources???</div>
     </div>
   </div>
   </script>
@@ -508,15 +213,34 @@ function loaded () {
   $("#scroller").append(_.template($("#introTemplate").html()));
 
   var template = $("#quizTemplate").html();
-  _.each(quiz, function(q) {
-    $("#scroller").append(_.template(template, {"q": q}));
+  _.each(quiz, function(q, i) {
+    $("#scroller").append(_.template(template, {"q": q, "i": i}));
   });
 
   $("#scroller").append(_.template($("#outroTemplate").html()));
 
+  $("#start").click(function() {
+    $('.slide.question[data-slideindex="0"]').show();
+    myScroll.next();
+  })
+
+  $("button.choice").click(function(e) {
+    var button = $(e.target);
+    var slide = button.closest(".question");
+
+    slide.find("button").removeClass("active");
+    button.addClass("active");
+    slide.find("p").text(button.data("text"));
+
+    $('.slide.question[data-slideindex="'+(slide.data("slideindex")+1)+'"]').show();
+    myScroll.next();
+
+  })
+
   $("#next").on("click",function() { myScroll.next(); onPageNav(); });
   $("#next").on("touchstart",function() { myScroll.next(); onPageNav(); });
 
+  /*
   $(".real").on("click", function() {
     $(this).addClass("button-success");
     $(this).parent().append("<p>Yup, it's real!</p>");
@@ -527,6 +251,7 @@ function loaded () {
     $(this).parent().append("<p>Nope, it's real!</p>");
     $("#next").css("display", "block");
   });
+  */
 
   $("#dotty").css("width", (100/slideCount)+"%");
   $(".slide").css("width", (100/slideCount)+"%");
