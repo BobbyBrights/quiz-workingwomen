@@ -26,7 +26,6 @@
   <link rel="stylesheet" href="css/h5bp.css">
   <link rel="stylesheet" href="css/bbw.css">
   <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-  <script src="js/vendor/iscroll.js"></script>
   <script src="js/vendor/enquire.min.js"></script>
 </head>
 
@@ -47,60 +46,34 @@ font-family:BWHaasRegular
 
 <body onload="loaded()">
 
-  <div id="nav" style="position:absolute;">
-    <div id="prev" class="nav-arrow-wrapper" onclick="myScroll.prev()" style="display:none;">
-      <img src="img/down.png">
-    </div>
-    <div id="next" class="nav-arrow-wrapper">
-      <img src="img/down.png">
-      <div class="pulser"></div>
-    </div>
-  </div>
-
-  <div id="viewport">
-    <div id="wrapper">
-      <div id="scroller"></div>
-    </div>
-  </div>
-
-  <div id="indicator">
-    <div id="dotty"></div>
-  </div>
-
   <script type="text/html" id="quizTemplate">
   <div class="slide question" data-slideindex="<%= q.id %>">
-    <div class="slide-inner">
-      <h2 class="question"><%= q.question %></h3>
-      <% _.each(q.choices, function(choice) { %>
-        <button class="choice" data-points="<%= choice.points %>" data-text="<%= choice.text %>" data-nextslide="<%= choice.next %>">
-          <%= choice.button %>
-          <div class="points"><%=choice.points%></div>
-        </button>
-      <% }); %>
-      <p class="choice-text"></p>
-    </div>
+    <h2 class="question"><%= q.question %></h3>
+    <% _.each(q.choices, function(choice) { %>
+      <button class="choice" data-points="<%= choice.points %>" data-text="<%= choice.text %>" data-nextslide="<%= choice.next %>">
+        <%= choice.button %>
+        <div class="points"><%=choice.points%></div>
+      </button>
+    <% }); %>
+    <p class="choice-text"></p>
   </div>
   </script>
 
   <script type="text/html" id="introTemplate">
   <div class="slide" id="intro">
-    <div class="slide-inner preview">
-      <a href="http://businessweek.com/" title="Bloomberg Businessweek"><img src="apple-touch-icon-precomposed.png" width="50"></a>
-      <h2 id="title">Can a woman ever win at work?</h2>
-      <p id="description">It’s hard enough for a working woman, and now a new study from UNC’s Kenan Flager School of Business found many struggles over promotion and raises may be out of a gal’s control. Take this easy quiz to determine just how screwed you might be, culled from the endless academic research on office gender dynamics.</p>
-      <button id="start">Start</button>
-    </div>
+    <a href="http://businessweek.com/" title="Bloomberg Businessweek"><img src="apple-touch-icon-precomposed.png" width="50"></a>
+    <h2 id="title">Can a woman ever win at work?</h2>
+    <p id="description">It’s hard enough for a working woman, and now a new study from UNC’s Kenan Flager School of Business found many struggles over promotion and raises may be out of a gal’s control. Take this easy quiz to determine just how screwed you might be, culled from the endless academic research on office gender dynamics.</p>
+    <button id="start">Start</button>
   </div>
   </script>
 
   <script type="text/html" id="outroTemplate">
   <div class="slide" id="outro">
-    <div class="slide-inner preview">
-      <h2><span id="point-total">0</span> points</h2>
-      <p id="point-total-text">Outro description text</p>
-      <a id="story-link" href="#"><button>Call to action</button></a>
-      <div class="data-credit">Sources???</div>
-    </div>
+    <h2><span id="point-total">0</span> points</h2>
+    <p id="point-total-text">Outro description text</p>
+    <a id="story-link" href="#"><button>Call to action</button></a>
+    <div class="data-credit">Sources???</div>
   </div>
   </script>
 
@@ -109,14 +82,9 @@ font-family:BWHaasRegular
   <script src="js/vendor/underscore-min.js"></script>
   <script src="js/main.js"></script>
 
-  <script>
-
-// before doing anything else, set up iscroll
-var myScroll;
+<script>
 
 function loaded () {
-
-  document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 
   var quiz = [
     { "id": 0,
@@ -231,20 +199,18 @@ function loaded () {
   ];
   var slideCount = quiz.length+2;
 
-
-  $("#scroller").append(_.template($("#introTemplate").html()));
+  $("body").append(_.template($("#introTemplate").html()));
 
   var template = $("#quizTemplate").html();
   _.each(quiz, function(q, i) {
-    $("#scroller").append(_.template(template, {"q": q, "i": i}));
+    $("body").append(_.template(template, {"q": q, "i": i}));
   });
 
-  $("#scroller").append(_.template($("#outroTemplate").html()));
+  $("body").append(_.template($("#outroTemplate").html()));
   $("#outro").attr("data-slideindex", quiz.length);
 
   $("#start").click(function() {
     $('.slide.question[data-slideindex="0"]').show();
-    myScroll.next();
   })
 
   $("button.choice").click(function(e) {
@@ -264,15 +230,11 @@ function loaded () {
     $("#point-total").text(pointTotal);
     $("#point-total-text").text(pointText(pointTotal));
 
-    // progressive reveal (show next slide & advance)
+    // progressive reveal (show next slide)
     var nextSlide = button.data("nextslide") ? button.data("nextslide") : slide.data("slideindex")+1;
     $('.slide[data-slideindex="'+nextSlide+'"]').show();
 
   })
-
-  function next() {
-    myScroll.next();
-  }
 
   function pointText(points) {
     if(points>5) {
@@ -284,81 +246,8 @@ function loaded () {
     }
   }
 
-  $("#next").on("click",function() { myScroll.next(); onPageNav(); });
-  $("#next").on("touchstart",function() { myScroll.next(); onPageNav(); });
-
-  /*
-  $(".real").on("click", function() {
-    $(this).addClass("button-success");
-    $(this).parent().append("<p>Yup, it's real!</p>");
-    $("#next").css("display", "block");
-  });
-  $(".fake").on("click", function() {
-    $(this).addClass("button-error");
-    $(this).parent().append("<p>Nope, it's real!</p>");
-    $("#next").css("display", "block");
-  });
-  */
-
-  $("#dotty").css("width", (100/slideCount)+"%");
-  $(".slide").css("width", (100/slideCount)+"%");
-  if(window.innerWidth < 361) {
-    $("#scroller").css("width", (100*slideCount)+"%");
-  }
-  else {
-    $("#scroller").css("width", (320*slideCount)+"px");
-  }
-
-  myScroll = new IScroll('#wrapper', {
-    scrollX: true,
-    scrollY: false,
-    momentum: false,
-    snap: true,
-    snapSpeed: 400,
-    keyBindings: true,
-    mouseWheel: true,
-    indicators: {
-      el: document.getElementById('indicator'),
-      resize: false
-    }
-  });
-  myScroll.on('scrollEnd', onPageNav);
-
-  enquire.register("screen and (min-width: 361px)", {
-
-    // triggered when media query matches.
-    match : function() {
-      $("#scroller").css("width", (320*slideCount)+"px");
-    },
-
-    unmatch : function() {
-      $("#scroller").css("width", (100*slideCount)+"%");
-    }
-
-  });
 }
-
-function onPageNav() {
-  $("#next").css("display", "none");
-  /*
-  if(myScroll.currentPage.pageX == 0) {
-    myScroll.pages[0].seen = true;
-    $("#next").css("display", "block");
-    $("#prev").css("display", "none");
-  } else if(myScroll.currentPage.pageX == 1) {
-    myScroll.pages[1].seen = true;
-    $("#next").css("display", deepwaterSeen ? "block" : "none");
-    $("#next .pulser").css("display", myScroll.pages[2].seen ? "none" : "block");
-    $("#prev").css("display", "block");
-  } else if(myScroll.currentPage.pageX == 2) {
-    myScroll.pages[2].seen = true;
-    $("#next").css("display", "none");
-    $("#prev").css("display", "block");
-  }
-  */
-}
-
-  </script>
+</script>
 
 <!-- Google Analytics -->
 <script>
