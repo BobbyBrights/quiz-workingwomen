@@ -71,7 +71,7 @@ a {
 }
 
 .dek {
-  font-family: BWHaasRegular;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .data-credit {
@@ -145,7 +145,7 @@ body {
 }
 
 .slide {
-  font-family: BWHaasRegular;
+  font-family: Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 13pt;
   position: relative;
@@ -174,7 +174,7 @@ h2.question {
   border: 2px solid black;
   text-transform: uppercase;
   padding: 10px;
-  font-family: 'Arial Narrow';
+  font-family: 'Arial Narrow', helvetica, arial, sans-serif;
   font-weight: bold;
   text-shadow: none;
   display: inline;
@@ -195,7 +195,7 @@ button {
   border: 3px solid black;
   text-transform: uppercase;
   padding: 10px;
-  font-family: 'Arial Narrow';
+  font-family: 'Arial Narrow', helvetica, arial, sans-serif;
   font-weight: bold;
 }
 
