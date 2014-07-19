@@ -266,7 +266,6 @@ function loaded () {
 
     // progressive reveal (show next slide & advance)
     var nextSlide = button.data("nextslide") ? button.data("nextslide") : slide.data("slideindex")+1;
-    console.log("next slide: " + nextSlide);
     $('.slide[data-slideindex="'+nextSlide+'"]').show();
 
   })
