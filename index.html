@@ -48,7 +48,8 @@ font-family:BWHaasRegular
 
   <script type="text/html" id="quizTemplate">
   <div class="slide question" data-slideindex="<%= q.id %>">
-    <h2 class="question"><%= q.question %></h3>
+    <h2 class="question"><%= q.question %></h2>
+    <div class="clear" style="clear:both;margin:20px;"></div>
     <% _.each(q.choices, function(choice) { %>
       <button class="choice" data-points="<%= choice.points %>" data-text="<%= choice.text %>" data-nextslide="<%= choice.next %>">
         <%= choice.button %>
@@ -233,6 +234,13 @@ function loaded () {
     // progressive reveal (show next slide)
     var nextSlide = button.data("nextslide") ? button.data("nextslide") : slide.data("slideindex")+1;
     $('.slide[data-slideindex="'+nextSlide+'"]').show();
+
+    // scroll to bottom of page (to reveal next question)
+    $('html, body').animate({
+       scrollTop: $(document).height()-$(window).height()},
+       500,
+       "swing"
+    );
 
   })
 

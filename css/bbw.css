@@ -96,6 +96,11 @@ a {
   background-repeat: no-repeat;
 }
 
+.clear {
+  clear: both;
+  margin: 20px;
+}
+
 /* SVG */
 
 #svg-canvas.fullscreen {
@@ -145,6 +150,7 @@ body {
   font-size: 13pt;
   position: relative;
   text-shadow: #fff 1px 1px 0px;
+  margin: 30px;
 }
 
 /* progressive reveal of quiz slides */
@@ -171,7 +177,7 @@ h2.question {
   font-family: 'Arial Narrow';
   font-weight: bold;
   text-shadow: none;
-  margin-bottom: 20px;
+  display: inline;
 }
 
 #title {
