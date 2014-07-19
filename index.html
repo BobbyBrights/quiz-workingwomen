@@ -46,8 +46,6 @@ font-family:BWHaasRegular
 
 <body onload="loaded()">
 
-  <svg id="svg-canvas" class="fullscreen"></svg>
-
   <script type="text/html" id="quizTemplate">
   <div class="slide question" data-slideindex="<%= q.id %>">
     <h2 class="question"><%= q.question %></h2>
@@ -83,9 +81,7 @@ font-family:BWHaasRegular
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
   <script src="js/vendor/underscore-min.js"></script>
-  <script src="js/vendor/d3.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/swoopyarrows.js"></script>
 
 <script>
 
@@ -247,19 +243,6 @@ function loaded () {
        500,
        "swing"
     );
-
-    // expand svg canvas
-    d3.select("svg").attr("height", $(document).height()+"px");
-
-    // set up new arrow
-    swoop = swoopyArrow()
-      .from(button)
-      .to($('.slide[data-slideindex="'+nextSlide+'"] h2'))
-      .degrees(90)
-      .clockwise(false);
-
-    // draw sample arrow
-    var svg = d3.select("svg").call(swoop);
 
   })
 
