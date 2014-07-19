@@ -223,6 +223,7 @@ button:hover {
 
 button.choice {
   position: relative;
+  margin: 10px;
 }
 
 button.choice .points {
@@ -230,10 +231,11 @@ button.choice .points {
   background: #ccc;
   position: absolute;
   top: -10px;
-  right: -5px;
+  right: -10px;
   padding: 5px;
-  border-radius: 10px;
-  border: 1px solid black;
+  border-radius: 15px;
+  border: 2px solid black;
+  width: 30px;
 }
 
 button.choice.active .points {
@@ -273,7 +275,9 @@ button[data-points="1"] .points {
 
 @media (max-width: 360px) {
   /* mobile only */
-
+  h2.question{
+    display: block;
+  }
 }
 
 @media (min-width: 361px) {
