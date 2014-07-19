@@ -6,17 +6,17 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>The United States of Oil Spills - Businessweek</title>
+  <title>Can a woman ever win at work? - Businessweek</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 
   <meta name="twitter:card" content="photo">
   <meta name="twitter:site" content="bizweekgraphics">
   <meta name="twitter:creator" content="tophtucker">
-  <meta name="twitter:title" content="The United States of Oil Spills">
-  <meta name="twitter:image" content="http://flip.bizweekgraphics.com/s/oilspill/img/twittercard3.png">
-  <meta name="twitter:image:width" content="816">
-  <meta name="twitter:image:height" content="551">
+  <meta name="twitter:title" content="Can a woman ever win at work?">
+  <meta name="twitter:image" content="http://">
+  <meta name="twitter:image:width" content="100">
+  <meta name="twitter:image:height" content="100">
   <meta name="twitter:domain" content="http://bizweekgraphics.com/">
 
   <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
@@ -25,330 +25,10 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/h5bp.css">
   <link rel="stylesheet" href="css/bbw.css">
-  <link rel="stylesheet" href="css/charts.css">
   <script src="js/vendor/modernizr-2.6.2.min.js"></script>
   <script src="js/vendor/iscroll.js"></script>
   <script src="js/vendor/enquire.min.js"></script>
 </head>
-
-<style type="text/css">
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html {
-  -ms-touch-action: none;
-  width: 100%;
-  height: 100%;
-}
-
-body, ul, li {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-body {
-  font-size: 12px;
-  font-family: helvetica, arial;
-  color: black;
-  overflow: hidden; /* this is important to prevent the whole page to bounce */
-  width: 100%;
-  height: 100%;
-  background: #efe;
-}
-
-#viewport {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-#wrapper {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-}
-
-#scroller {
-  position: absolute;
-  z-index: 1;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  height: 100%;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-  -o-text-size-adjust: none;
-  text-size-adjust: none;
-}
-
-.slide {
-  height: 90%;
-  height: calc(100% - 40px);
-  float: left;
-  font-family: BWHaasRegular;
-  text-align: center;
-  font-size: 13pt;
-  position: relative;
-  text-shadow: #fff 1px 1px 0px;
-}
-
-.slide-inner {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-}
-
-.slide svg {
-  position: absolute;
-  top:0;
-  left:0;
-  z-index: -1;
-}
-
-.axis line, .axis path {
-  fill: none;
-  stroke: none;
-}
-
-.y.axis .tick line {
-  stroke: #eee;
-}
-
-.y.axis {
-  font-size: 10pt;
-}
-
-h2 {
-  font-family: BWHaasHead;
-  font-size: 16pt;
-  margin-right: 20px;
-  color: black;
-}
-
-#title {
-  margin: 0;
-  font-size: 20pt;
-}
-
-.preview {
-  text-align: center;
-}
-
-#indicator {
-  position: absolute;
-  z-index: 1;
-  bottom: 0px;
-  width: 100%;
-  height: 5px;
-}
-
-#dotty {
-  position: absolute;
-  height: 5px;
-  background: #666;
-}
-
-.icon {
-  z-index:-1;
-  width: 60px;
-}
-
-/* from pure css http://purecss.io/buttons/ */
-button {
-  font-family: BWHaasHead;
-  font-size: 100%;
-  padding: .5em 1.5em;
-  color: #444;
-  color: rgba(0,0,0,.8);
-  border: 1px solid #999;
-  border: 0 rgba(0,0,0,0);
-  background-color: #E6E6E6;
-  text-decoration: none;
-  border-radius: 2px;
-  -webkit-transition: .1s linear -webkit-box-shadow;
-  -moz-transition: .1s linear -moz-box-shadow;
-  -ms-transition: .1s linear box-shadow;
-  -o-transition: .1s linear box-shadow;
-  transition: .1s linear box-shadow;
-  display: inline-block;
-  zoom: 1;
-  line-height: normal;
-  white-space: nowrap;
-  vertical-align: baseline;
-  text-align: center;
-  cursor: pointer;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-appearance: button;
-  cursor: pointer;
-  margin: 0;
-  box-sizing: border-box;
-  align-items: flex-start;
-}
-
-button:hover {
-  background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
-}
-
-.button-success,
-.button-error,
-.button-warning,
-.button-secondary {
-    color: white;
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-.button-success {
-    background: rgb(28, 184, 65); /* this is a green */
-}
-
-.button-error {
-    background: rgb(202, 60, 60); /* this is a maroon */
-}
-
-.button-warning {
-    background: rgb(223, 117, 20); /* this is an orange */
-}
-
-.button-secondary {
-    background: rgb(66, 184, 221); /* this is a light blue */
-}
-
-/* thx http://jsfiddle.net/mandynicole/7xrKP/ */
-.pulser {
-    border: 3px solid #f0f;
-    -webkit-border-radius: 30px;
-    height: 35px;
-    width: 35px;
-    position: absolute;
-    -webkit-animation: pulsate 1s ease-out;
-    -webkit-animation-iteration-count: infinite;
-    opacity: 0.0
-}
-@-webkit-keyframes pulsate {
-    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
-    50% {opacity: 1.0;}
-    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
-}
-
-.nav-arrow-wrapper .pulser {
-  right:3px;
-  top:2px;
-  z-index:-1;
-}
-
-#nav {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 9;
-  pointer-events: none;
-}
-
-#nav .nav-arrow-wrapper {
-  position: absolute;
-  pointer-events: auto;
-  cursor: pointer;
-  bottom: 0;
-  top: auto;
-  z-index: 9;
-  height: 40px;
-}
-
-#nav .nav-arrow-wrapper img {
-  height: 40px;
-  width: 40px;
-}
-
-#nav #prev {
-  -webkit-transform: rotate(90deg);
-  left: 0;
-}
-
-#nav #next {
-  -webkit-transform: rotate(-90deg);
-  right: 0;
-}
-
-@media (max-width: 360px) {
-  /* mobile only */
-
-}
-
-@media (min-width: 361px) {
-  /* desktop view */
-
-  #nav {
-    display: inherit !important;
-  }
-
-  #map-link {
-    display: none;
-  }
-
-  #nav .pulser {
-    display: none;
-  }
-
-  #viewport {
-    width: 100%;
-    height: 480px;
-    background: none;
-    top: 20%;
-  }
-
-  #wrapper {
-    width: 320px;
-    height: 100%;
-    background: none;
-  }
-
-  #scroller {
-    height: 100%;
-  }
-
-  #nav .nav-arrow-wrapper {
-    top: 40%;
-    bottom: auto;
-    opacity: 0.5;
-  }
-  #nav .nav-arrow-wrapper:hover {
-    opacity: 1;
-  }
-  #nav .nav-arrow-wrapper img {
-    width: 100px;
-    height: 100px;
-  }
-
-  #nav .nav-arrow-wrapper .pulser {
-    width: 60px;
-    height: 60px;
-    right: 20px;
-    top: 15px;
-  }
-
-}
-
-</style>
 
 <!--
 Body classes:
@@ -388,11 +68,16 @@ font-family:BWHaasRegular
   </div>
 
   <script type="text/html" id="quizTemplate">
-  <div class="slide">
+  <div class="slide question" data-slideindex="<%= q.id %>">
     <div class="slide-inner">
-      <h2><%= q.codename %></h3>
-      <p><%= q.description %></p>
-      <button class="real">Real</button> <button class="fake">Fake</button>
+      <h2 class="question"><%= q.question %></h3>
+      <% _.each(q.choices, function(choice) { %>
+        <button class="choice" data-points="<%= choice.points %>" data-text="<%= choice.text %>" data-nextslide="<%= choice.next %>">
+          <%= choice.button %>
+          <div class="points"><%=choice.points%></div>
+        </button>
+      <% }); %>
+      <p class="choice-text"></p>
     </div>
   </div>
   </script>
@@ -401,9 +86,9 @@ font-family:BWHaasRegular
   <div class="slide" id="intro">
     <div class="slide-inner preview">
       <a href="http://businessweek.com/" title="Bloomberg Businessweek"><img src="apple-touch-icon-precomposed.png" width="50"></a>
-      <h2 id="title">Quiz: NSA codenames, real or fake?</h2>
-      <img src="img/pipelines.svg" class="icon"/><img src="img/ships.svg" class="icon"/><img src="img/facilities.svg" class="icon"/><img src="img/other.svg" class="icon"/>
-      <p id="description">25 years since the Exxon Valdez dumped millions of gallons of crude on a remote Alaskan shore, tankers are safer than ever. But where oil goes, spills will always follow.</p>
+      <h2 id="title">Can a woman ever win at work?</h2>
+      <p id="description">It’s hard enough for a working woman, and now a new study from UNC’s Kenan Flager School of Business found many struggles over promotion and raises may be out of a gal’s control. Take this easy quiz to determine just how screwed you might be, culled from the endless academic research on office gender dynamics.</p>
+      <button id="start">Start</button>
     </div>
   </div>
   </script>
@@ -411,12 +96,10 @@ font-family:BWHaasRegular
   <script type="text/html" id="outroTemplate">
   <div class="slide" id="outro">
     <div class="slide-inner preview">
-      <a href="http://businessweek.com/" title="Bloomberg Businessweek"><img src="apple-touch-icon-precomposed.png" width="50"></a>
-      <h2 id="title">The United States of Oil Spills</h2>
-      <img src="img/pipelines.svg" class="icon"/><img src="img/ships.svg" class="icon"/><img src="img/facilities.svg" class="icon"/><img src="img/other.svg" class="icon"/>
-      <p id="description">25 years since the Exxon Valdez dumped millions of gallons of crude on a remote Alaskan shore, tankers are safer than ever. But where oil goes, spills will always follow.</p>
-      <a id="story-link" href="graphic.html"><button>Explore graphic</button></a>
-      <div class="data-credit">Data: U.S. Coast Guard</div>
+      <h2><span id="point-total">0</span> points</h2>
+      <p id="point-total-text">Outro description text</p>
+      <a id="story-link" href="#"><button>Call to action</button></a>
+      <div class="data-credit">Sources???</div>
     </div>
   </div>
   </script>
@@ -436,16 +119,115 @@ function loaded () {
   document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 
   var quiz = [
-    { "codename": "Alpha",
-      "description": "Description description description lorem ipsum, Description description description lorem ipsum" },
-    { "codename": "Beta",
-      "description": "Description description description lorem ipsum, Description description description lorem ipsum" },
-    { "codename": "Gamma",
-      "description": "Description description description lorem ipsum, Description description description lorem ipsum" },
-    { "codename": "Delta",
-      "description": "Description description description lorem ipsum, Description description description lorem ipsum" },
-    { "codename": "X-Ray",
-      "description": "Description description description lorem ipsum, Description description description lorem ipsum" }
+    { "id": 0,
+      "question": "IS YOUR BOSS A MAN?",
+      "choices": [
+        { "button": "Yes",
+          "text": "Of course. According to a 2013 Gallup poll, 54% of Americans have a male boss, versus 30% with a female one. Actually, 35% of Americans would rather work for a man, while 40% have no preference either way.",
+          "points": 1,
+          "next": 1 },
+        { "button": "No",
+          "text": "Watch out. Female bosses ￼might not help you get ahead. In 2012, MIT studied U.S. bank branches where half the managers were women. They were just as unlikely to promote underlings.",
+          "points": 1,
+          "next": 4 }
+      ]
+    },
+    { "id": 1,
+      "question": "DOES HE HAVE A WIFE?",
+      "choices": [
+        { "button": "Yes",
+          "text": "",
+          "points": 0,
+          "next": 2 },
+        { "button": "No",
+          "text": "",
+          "points": 0,
+          "next": 3 }
+      ]
+    },
+    { "id": 2,
+      "question": "DOES HIS WIFE WORK?",
+      "choices": [
+        { "button": "Yes",
+          "text": "Great! In a UNC Kenan Flagler Business School study, male managers married to working women were more likely to recommend female candidates over males for new positions.",
+          "points": 1 },
+        { "button": "No",
+          "text": "Bad news: The same research showed married men with stay-at-home wives viewed female colleagues unfavorably and had a tendency to pass them over for promotions.",
+          "points": -1 },
+        { "button": "Not applicable!",
+          "text": "OK, carry on...",
+          "points": 0 }
+      ]
+    },
+    { "id": 3,
+      "question": "DOES HE HAVE A DAUGHTER?",
+      "choices": [
+        { "button": "Yes",
+          "text": "Excellent! If a male CEO has a first child who’s a girl, a female employee’s wages will rise by 1.1%. Male employees see a much smaller rise, according to a 2012 issue of Administrative Science Quarterly.",
+          "points": 1 },
+        { "button": "No",
+          "text": "Eek. Based on the same study, when CEOs have a son, all employees’ wages drop. Fortunately, it’s less than half a percent.",
+          "points": -1 },
+        { "button": "Not applicable!",
+          "text": "OK, carry on...",
+          "points": 0 }
+      ]
+    },
+    { "id": 4,
+      "question": "ARE YOU BLOND?",
+      "choices": [
+        { "button": "Yes",
+          "text": "U. of Queensland researchers found blondes make 7% more",
+          "points": 1 },
+        { "button": "No",
+          "text": "Could you be blond?",
+          "points": -1 }
+      ]
+    },
+    { "id": 5,
+      "question": "DO YOU FLIRT AT WORK?",
+      "choices": [
+        { "button": "Yes",
+          "text": "Go for it. In 2012, Berkeley’s Haas School of Business found that women could flirt their way into higher prices when selling cars to men. In 2009, former Sec. of State Madeline Albright told Bill Maher that she flirted with foreign dignitaries so they’d concur.",
+          "points": 1 },
+        { "button": "No",
+          "text": "Safety first; flirting can backfire. A 2013 Academy of Management brief said that even though big law firms encouraged strategic flirtation, the women who tried it were looked down upon, considered stupid, and mistreated.",
+          "points": 0 }
+      ]
+    },
+    { "id": 6,
+      "question": "DO YOU DRESS UP FOR WORK?",
+      "choices": [
+        { "button": "Yes",
+          "text": "￼Well done. According to Proctor & Gamble-funded psychology research conducted at Harvard U., people think women wearing makeup look more competent and professional than those who don’t.",
+          "points": 1 },
+        { "button": "No",
+          "text": "This may be ideal. In a study titled “Intolerance of Sexy Peers,” a McMaster U. researcher discovered women were put off by other women who looked too fancy. 85% preferred a thin blond woman in khakis over the same woman in a short skirt and tall boots.",
+          "points": -1 }
+      ]
+    },
+    { "id": 7,
+      "question": "HOW’S YOUR WEIGHT?",
+      "choices": [
+        { "button": "I'm good",
+          "text": "Nice! Many studies have proven a woman’s weight has a significant effect on her earnings potential. The Journal of Applied Psychology reported in 2010 that even very thin women are punished when they gain a little.",
+          "points": 1 },
+        { "button": "I could lose a few",
+          "text": "Uh oh. There’s a sad scientific correlation: When a woman’s BMI increases, her income decreases. Her spouse’s does, too. The effect is most profound on younger women without established careers.",
+          "points": -1 }
+      ]
+    },
+    { "id": 8,
+      "question": "￼DO YOU HAVE GOOD POSTURE?",
+      "choices": [
+        { "button": "Yes",
+          "text": "A Harvard Business School study says you’ll look more powerful.",
+          "points": 1 },
+        { "button": "No",
+          "text": "Stand up straight.",
+          "points": -1 }
+      ]
+    }
   ];
   var slideCount = quiz.length+2;
 
@@ -453,15 +235,59 @@ function loaded () {
   $("#scroller").append(_.template($("#introTemplate").html()));
 
   var template = $("#quizTemplate").html();
-  _.each(quiz, function(q) {
-    $("#scroller").append(_.template(template, {"q": q}));
+  _.each(quiz, function(q, i) {
+    $("#scroller").append(_.template(template, {"q": q, "i": i}));
   });
 
   $("#scroller").append(_.template($("#outroTemplate").html()));
+  $("#outro").attr("data-slideindex", quiz.length);
+
+  $("#start").click(function() {
+    $('.slide.question[data-slideindex="0"]').show();
+    myScroll.next();
+  })
+
+  $("button.choice").click(function(e) {
+    var button = $(e.target);
+    var slide = button.closest(".question");
+
+    // show points and text
+    slide.find("button").removeClass("active");
+    button.addClass("active");
+    slide.find("p").text(button.data("text"));
+
+    // update point total
+    var answers = $(".choice.active");
+    var pointTotal = answers.toArray().reduce(function(a,b) {
+      return a + $(b).data("points");
+    }, 0);
+    $("#point-total").text(pointTotal);
+    $("#point-total-text").text(pointText(pointTotal));
+
+    // progressive reveal (show next slide & advance)
+    var nextSlide = button.data("nextslide") ? button.data("nextslide") : slide.data("slideindex")+1;
+    $('.slide[data-slideindex="'+nextSlide+'"]').show();
+
+  })
+
+  function next() {
+    myScroll.next();
+  }
+
+  function pointText(points) {
+    if(points>5) {
+      return "You get a raise!";
+    } else if (points >= 0) {
+      return "Tread carefully. Oh, and maybe get some highlights.";
+    } else {
+      return "Have you thought about quitting your job?";
+    }
+  }
 
   $("#next").on("click",function() { myScroll.next(); onPageNav(); });
   $("#next").on("touchstart",function() { myScroll.next(); onPageNav(); });
 
+  /*
   $(".real").on("click", function() {
     $(this).addClass("button-success");
     $(this).parent().append("<p>Yup, it's real!</p>");
@@ -472,6 +298,7 @@ function loaded () {
     $(this).parent().append("<p>Nope, it's real!</p>");
     $("#next").css("display", "block");
   });
+  */
 
   $("#dotty").css("width", (100/slideCount)+"%");
   $(".slide").css("width", (100/slideCount)+"%");
