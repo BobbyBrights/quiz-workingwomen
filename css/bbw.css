@@ -96,6 +96,11 @@ a {
   background-repeat: no-repeat;
 }
 
+.clear {
+  clear: both;
+  margin: 20px;
+}
+
 /* SVG */
 
 #svg-canvas.fullscreen {
@@ -122,8 +127,8 @@ path.arrow, polyline.arrow {
 
 html {
   -ms-touch-action: none;
-  width: 100%;
-  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body, ul, li {
@@ -136,70 +141,16 @@ body {
   font-size: 12px;
   font-family: helvetica, arial;
   color: black;
-  overflow: hidden; /* this is important to prevent the whole page to bounce */
-  width: 100%;
-  height: 100%;
   background: white;
 }
 
-#viewport {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-#wrapper {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-}
-
-#scroller {
-  position: absolute;
-  z-index: 1;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  height: 100%;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-  -o-text-size-adjust: none;
-  text-size-adjust: none;
-}
-
 .slide {
-  height: 90%;
-  height: calc(100% - 40px);
-  float: left;
   font-family: BWHaasRegular;
   text-align: center;
   font-size: 13pt;
   position: relative;
   text-shadow: #fff 1px 1px 0px;
-}
-
-.slide-inner {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-}
-
-.slide svg {
-  position: absolute;
-  top:0;
-  left:0;
-  z-index: -1;
+  margin: 30px;
 }
 
 /* progressive reveal of quiz slides */
@@ -226,7 +177,7 @@ h2.question {
   font-family: 'Arial Narrow';
   font-weight: bold;
   text-shadow: none;
-  margin-bottom: 20px;
+  display: inline;
 }
 
 #title {
@@ -236,25 +187,6 @@ h2.question {
 
 .preview {
   text-align: center;
-}
-
-#indicator {
-  position: absolute;
-  z-index: 1;
-  bottom: 0px;
-  width: 100%;
-  height: 5px;
-}
-
-#dotty {
-  position: absolute;
-  height: 5px;
-  background: #666;
-}
-
-.icon {
-  z-index:-1;
-  width: 60px;
 }
 
 button {
@@ -339,39 +271,6 @@ button[data-points="1"] .points {
   z-index:-1;
 }
 
-#nav {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 9;
-  pointer-events: none;
-}
-
-#nav .nav-arrow-wrapper {
-  position: absolute;
-  pointer-events: auto;
-  cursor: pointer;
-  bottom: 0;
-  top: auto;
-  z-index: 9;
-  height: 40px;
-}
-
-#nav .nav-arrow-wrapper img {
-  height: 40px;
-  width: 40px;
-}
-
-#nav #prev {
-  -webkit-transform: rotate(90deg);
-  left: 0;
-}
-
-#nav #next {
-  -webkit-transform: rotate(-90deg);
-  right: 0;
-}
-
 @media (max-width: 360px) {
   /* mobile only */
 
@@ -379,54 +278,5 @@ button[data-points="1"] .points {
 
 @media (min-width: 361px) {
   /* desktop view */
-
-  #nav {
-    display: inherit !important;
-  }
-
-  #map-link {
-    display: none;
-  }
-
-  #nav .pulser {
-    display: none;
-  }
-
-  #viewport {
-    width: 100%;
-    height: 480px;
-    background: none;
-    top: 20%;
-  }
-
-  #wrapper {
-    width: 320px;
-    height: 100%;
-    background: none;
-  }
-
-  #scroller {
-    height: 100%;
-  }
-
-  #nav .nav-arrow-wrapper {
-    top: 40%;
-    bottom: auto;
-    opacity: 0.5;
-  }
-  #nav .nav-arrow-wrapper:hover {
-    opacity: 1;
-  }
-  #nav .nav-arrow-wrapper img {
-    width: 100px;
-    height: 100px;
-  }
-
-  #nav .nav-arrow-wrapper .pulser {
-    width: 60px;
-    height: 60px;
-    right: 20px;
-    top: 15px;
-  }
 
 }
