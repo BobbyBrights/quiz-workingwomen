@@ -239,6 +239,7 @@ function loaded () {
       return a + $(b).data("points");
     }, 0);
     $("#point-total").text(pointTotal);
+    $("#point-total-text").text(pointText(pointTotal));
 
     // progressive reveal (show next slide & advance)
     $('.slide[data-slideindex="'+(slide.data("slideindex")+1)+'"]').show();
@@ -248,6 +249,16 @@ function loaded () {
 
   function next() {
     myScroll.next();
+  }
+
+  function pointText(points) {
+    if(points>5) {
+      return "You get a raise!";
+    } else if (points >= 0) {
+      return "Tread carefully. Oh, and maybe get some highlights.";
+    } else {
+      return "Have you thought about quitting your job?";
+    }
   }
 
   $("#next").on("click",function() { myScroll.next(); onPageNav(); });
