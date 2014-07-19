@@ -210,8 +210,16 @@ function loaded () {
   $("body").append(_.template($("#outroTemplate").html()));
   $("#outro").attr("data-slideindex", quiz.length);
 
-  $("#start").click(function() {
+  $("#start").click(function(e) {
     $('.slide.question[data-slideindex="0"]').show();
+    $(e.target).hide();
+
+    // scroll to bottom of page (to reveal first question)
+    $('html, body').animate({
+       scrollTop: $(document).height()-$(window).height()},
+       500,
+       "swing"
+    );
   })
 
   $("button.choice").click(function(e) {
