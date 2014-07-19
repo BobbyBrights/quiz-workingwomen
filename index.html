@@ -96,10 +96,9 @@ font-family:BWHaasRegular
   <script type="text/html" id="outroTemplate">
   <div class="slide" id="outro">
     <div class="slide-inner preview">
-      <a href="http://businessweek.com/" title="Bloomberg Businessweek"><img src="apple-touch-icon-precomposed.png" width="50"></a>
-      <h2 id="title">Summary & results</h2>
-      <p id="description">Outro description text</p>
-      <a id="story-link" href="graphic.html"><button>Call to action</button></a>
+      <h2><span id="point-total">0</span> points</h2>
+      <p id="point-total-text">Outro description text</p>
+      <a id="story-link" href="#"><button>Call to action</button></a>
       <div class="data-credit">Sources???</div>
     </div>
   </div>
@@ -218,6 +217,7 @@ function loaded () {
   });
 
   $("#scroller").append(_.template($("#outroTemplate").html()));
+  $("#outro").attr("data-slideindex", quiz.length);
 
   $("#start").click(function() {
     $('.slide.question[data-slideindex="0"]').show();
@@ -228,14 +228,27 @@ function loaded () {
     var button = $(e.target);
     var slide = button.closest(".question");
 
+    // show points and text
     slide.find("button").removeClass("active");
     button.addClass("active");
     slide.find("p").text(button.data("text"));
 
-    $('.slide.question[data-slideindex="'+(slide.data("slideindex")+1)+'"]').show();
-    myScroll.next();
+    // update point total
+    var answers = $(".choice.active");
+    var pointTotal = answers.toArray().reduce(function(a,b) {
+      return a + $(b).data("points");
+    }, 0);
+    $("#point-total").text(pointTotal);
+
+    // progressive reveal (show next slide & advance)
+    $('.slide[data-slideindex="'+(slide.data("slideindex")+1)+'"]').show();
+    setTimeout(next,5000);
 
   })
+
+  function next() {
+    myScroll.next();
+  }
 
   $("#next").on("click",function() { myScroll.next(); onPageNav(); });
   $("#next").on("touchstart",function() { myScroll.next(); onPageNav(); });
