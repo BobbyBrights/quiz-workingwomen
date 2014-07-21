@@ -1,9 +1,8 @@
 body {
   background: #ffffff;
   color: #444444;
-  font-family: sans-serif;
   line-height: 1.231;
-	font-family: Helvetica, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 body.dark_layout {
@@ -71,14 +70,12 @@ a {
 }
 
 .dek {
-  font-family: Helvetica, Arial, sans-serif;
 }
 
 .data-credit {
   text-transform: uppercase;
   text-align: right;
   font-size: 10px;
-  font-family: Helvetica;
   margin-top: 50px;
 }
 
@@ -139,13 +136,11 @@ body, ul, li {
 
 body {
   font-size: 12px;
-  font-family: helvetica, arial;
   color: black;
   background: white;
 }
 
 .slide {
-  font-family: Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 13pt;
   position: relative;
@@ -162,7 +157,6 @@ body {
 }
 
 h2 {
-  font-family: BWHaasHead;
   font-size: 16pt;
   color: black;
 }
@@ -174,7 +168,6 @@ h2.question {
   border: 2px solid black;
   text-transform: uppercase;
   padding: 10px;
-  font-family: 'Arial Narrow', helvetica, arial, sans-serif;
   font-weight: bold;
   text-shadow: none;
   display: inline;
@@ -183,6 +176,7 @@ h2.question {
 #title {
   margin: 0;
   font-size: 20pt;
+  font-family: BWHaasHead;
 }
 
 .preview {
@@ -195,7 +189,6 @@ button {
   border: 3px solid black;
   text-transform: uppercase;
   padding: 10px;
-  font-family: 'Arial Narrow', helvetica, arial, sans-serif;
   font-weight: bold;
 }
 
@@ -282,5 +275,8 @@ button[data-points="1"] .points {
 
 @media (min-width: 361px) {
   /* desktop view */
-
+  .slide {
+    float: left;
+    width: 360px;
+  }
 }
