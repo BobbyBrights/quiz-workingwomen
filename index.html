@@ -56,6 +56,8 @@ font-family:BWHaasRegular
         <div class="points"><%=choice.points%></div>
       </button>
     <% }); %>
+    <img class="boss" src="img/boss.jpg"></img>
+    <div class="point-div">+1</div>
     <p class="choice-text"></p>
   </div>
   </script>
@@ -218,16 +220,43 @@ function loaded () {
     var button = $(e.target);
     var slide = button.closest(".question");
 
+    var pointDiv = button.parent().find('.point-div')
+    pointDiv.css('display', 'block')
+
+    if(button.data('points') === 1) {
+      pointDiv.text('+1')
+      pointDiv.css('background', '#0f0')
+      pointDiv.data('points', 1)
+    } else if (button.data('points') === -1) {
+      pointDiv.text('-1')
+      pointDiv.css('background', 'red')
+      pointDiv.data('points', -1)
+    } else {
+      pointDiv.text('+0')
+      pointDiv.css('background', 'lightgrey')
+      pointDiv.data('points', 0)
+    }
+
     // show points and text
-    slide.find("button").removeClass("active");
-    button.addClass("active");
+    // slide.find("button").removeClass("active");
+    // button.addClass("active");
     slide.find("p").text(button.data("text"));
 
     // update point total
-    var answers = $(".choice.active");
+    // var answers = $(".choice.active");
+    // var pointTotal = answers.toArray().reduce(function(a,b) {
+    //   return a + $(b).data("points");
+    // }, 0);
+
+    var answers = $('.point-div')
+
     var pointTotal = answers.toArray().reduce(function(a,b) {
+      if($(b).data("points") == undefined) {
+        $(b).data("points", 0)
+      }
       return a + $(b).data("points");
     }, 0);
+
     $("#point-total").text(pointTotal);
     $("#point-total-text").text(pointText(pointTotal));
 
