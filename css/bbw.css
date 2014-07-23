@@ -235,6 +235,9 @@ button[data-points="1"] .points {
   #title {
     font-size: 72px;
   }
+  .slide {
+    font-size: 20px;
+  }
   button, h2.question {
     font-size: 48px;
   }
