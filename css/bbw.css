@@ -39,7 +39,7 @@
 /* DRUK! */
 /* Druk Medium */
 @font-face {
-  font-family: 'DrukMedium';
+  font-family: 'Druk Web';
   src: url('Druk-Medium-Web.eot');
   src: url('Druk-Medium-Web.eot?#iefix') format('embedded-opentype'),
      url('Druk-Medium-Web.woff') format('woff'),
@@ -49,21 +49,9 @@
   font-style:   normal;
   font-stretch: normal;
 }
-/* Druk Bold */
-@font-face {
-  font-family: 'DrukBold';
-  src: url('Druk-Bold-Web.eot');
-  src: url('Druk-Bold-Web.eot?#iefix') format('embedded-opentype'),
-     url('Druk-Bold-Web.woff') format('woff'),
-     url('Druk-Bold-Web.ttf') format('truetype'),
-     url('Druk-Bold-Web.svg#Druk Web') format('svg');
-  font-weight:  700;
-  font-style:   normal;
-  font-stretch: normal;
-}
 /* Druk Wide Super */
 @font-face {
-  font-family: 'DrukWideSuper';
+  font-family: 'Druk Wide Web';
   src: url('DrukWide-Super-Web.eot');
   src: url('DrukWide-Super-Web.eot?#iefix') format('embedded-opentype'),
      url('DrukWide-Super-Web.woff') format('woff'),
@@ -137,28 +125,37 @@ h2.question {
   padding: 10px;
   text-shadow: none;
   display: inline;
-  font-family: DrukMedium;
   font-size: 20pt;
+  font-family: 'Druk Web';
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
 }
 
 #title {
   margin: 0;
-  font-size: 30pt;
-  font-family: DrukMedium;
+  font-size: 48px;
   text-transform: uppercase;
+  font-family: 'Druk Web';
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
 }
 #title strong {
-  font-family: DrukWideSuper;
+  font-family: 'Druk Wide Web';
 }
 
 button {
-  font-family: DrukMedium;
-  font-size: 20pt;
   background: #ddd;
   border-radius: 10px;
   border: 3px solid black;
   text-transform: uppercase;
   padding: 10px;
+  font-size: 20pt;
+  font-family: 'Druk Web';
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
 }
 
 button[data-points="-1"] {
@@ -197,7 +194,6 @@ button.choice .points {
   padding: 5px;
   border-radius: 15px;
   border: 2px solid black;
-  width: 30px;
 }
 
 button.choice.active .points {
@@ -232,4 +228,14 @@ button[data-points="1"] .points {
 
 @media (min-width: 361px) {
   /* desktop view */
+  body {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  #title {
+    font-size: 72px;
+  }
+  button, h2.question {
+    font-size: 48px;
+  }
 }
