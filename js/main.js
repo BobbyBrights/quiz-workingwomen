@@ -1,217 +1,171 @@
-//////////////////////////////////////////////////////////////////////////////////////////
-// TEMPLATE FUNCTIONS ////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
+function loaded () {
 
-// from http://stackoverflow.com/a/326076/120290
-function inIframe() {
-    try {
-        return window.self !== window.top;
-    } catch(err) {
-        return true;
+  var quiz = [
+    { "id": 0,
+      "question": "IS YOUR BOSS A MAN?",
+      "choices": [
+        { "button": "Yes",
+          "text": "Of course. According to a 2013 Gallup poll, 54% of Americans have a male boss, versus 30% with a female one. Actually, 35% of Americans would rather work for a man, while 40% have no preference either way.",
+          "points": 1,
+          "next": 1 },
+        { "button": "No",
+          "text": "Watch out. Female bosses ￼might not help you get ahead. In 2012, MIT studied U.S. bank branches where half the managers were women. They were just as unlikely to promote underlings.",
+          "points": 1,
+          "next": 4 }
+      ]
+    },
+    { "id": 1,
+      "question": "DOES HE HAVE A WIFE?",
+      "choices": [
+        { "button": "Yes",
+          "text": "",
+          "points": 0,
+          "next": 2 },
+        { "button": "No",
+          "text": "",
+          "points": 0,
+          "next": 3 }
+      ]
+    },
+    { "id": 2,
+      "question": "DOES HIS WIFE WORK?",
+      "choices": [
+        { "button": "Yes",
+          "text": "Great! In a UNC Kenan Flagler Business School study, male managers married to working women were more likely to recommend female candidates over males for new positions.",
+          "points": 1 },
+        { "button": "No",
+          "text": "Bad news: The same research showed married men with stay-at-home wives viewed female colleagues unfavorably and had a tendency to pass them over for promotions.",
+          "points": -1 }
+      ]
+    },
+    { "id": 3,
+      "question": "DOES HE HAVE A DAUGHTER?",
+      "choices": [
+        { "button": "Yes",
+          "text": "Excellent! If a male CEO has a first child who’s a girl, a female employee’s wages will rise by 1.1%. Male employees see a much smaller rise, according to a 2012 issue of Administrative Science Quarterly.",
+          "points": 1 },
+        { "button": "No",
+          "text": "Eek. Based on the same study, when CEOs have a son, all employees’ wages drop. Fortunately, it’s less than half a percent.",
+          "points": -1 }
+      ]
+    },
+    { "id": 4,
+      "question": "ARE YOU BLOND?",
+      "choices": [
+        { "button": "Yes",
+          "text": "U. of Queensland researchers found blondes make 7% more",
+          "points": 1 },
+        { "button": "No",
+          "text": "Could you be blond?",
+          "points": -1 }
+      ]
+    },
+    { "id": 5,
+      "question": "DO YOU FLIRT AT WORK?",
+      "choices": [
+        { "button": "Yes",
+          "text": "Go for it. In 2012, Berkeley’s Haas School of Business found that women could flirt their way into higher prices when selling cars to men. In 2009, former Sec. of State Madeline Albright told Bill Maher that she flirted with foreign dignitaries so they’d concur.",
+          "points": 1 },
+        { "button": "No",
+          "text": "Safety first; flirting can backfire. A 2013 Academy of Management brief said that even though big law firms encouraged strategic flirtation, the women who tried it were looked down upon, considered stupid, and mistreated.",
+          "points": 0 }
+      ]
+    },
+    { "id": 6,
+      "question": "DO YOU DRESS UP FOR WORK?",
+      "choices": [
+        { "button": "Yes",
+          "text": "￼Well done. According to Proctor & Gamble-funded psychology research conducted at Harvard U., people think women wearing makeup look more competent and professional than those who don’t.",
+          "points": 1 },
+        { "button": "No",
+          "text": "This may be ideal. In a study titled “Intolerance of Sexy Peers,” a McMaster U. researcher discovered women were put off by other women who looked too fancy. 85% preferred a thin blond woman in khakis over the same woman in a short skirt and tall boots.",
+          "points": -1 }
+      ]
+    },
+    { "id": 7,
+      "question": "HOW’S YOUR WEIGHT?",
+      "choices": [
+        { "button": "I'm good",
+          "text": "Nice! Many studies have proven a woman’s weight has a significant effect on her earnings potential. The Journal of Applied Psychology reported in 2010 that even very thin women are punished when they gain a little.",
+          "points": 1 },
+        { "button": "I could lose a few",
+          "text": "Uh oh. There’s a sad scientific correlation: When a woman’s BMI increases, her income decreases. Her spouse’s does, too. The effect is most profound on younger women without established careers.",
+          "points": -1 }
+      ]
+    },
+    { "id": 8,
+      "question": "￼DO YOU HAVE GOOD POSTURE?",
+      "choices": [
+        { "button": "Yes",
+          "text": "A Harvard Business School study says you’ll look more powerful.",
+          "points": 1 },
+        { "button": "No",
+          "text": "Stand up straight.",
+          "points": -1 }
+      ]
     }
-}
+  ];
+  var slideCount = quiz.length+2;
 
-$( document ).ready(function() {
-  if(inIframe()) $("body").addClass("iframed");
-});
+  $("body").append(_.template($("#introTemplate").html()));
 
-// store query string in urlParams
-// from http://stackoverflow.com/a/2880929/120290
-var urlParams;
-(window.onpopstate = function () {
-    var match,
-        pl     = /\+/g,  // Regex for replacing addition symbol with a space
-        search = /([^&=]+)=?([^&]*)/g,
-        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-        query  = window.location.search.substring(1);
+  var template = $("#quizTemplate").html();
+  _.each(quiz, function(q, i) {
+    $("body").append(_.template(template, {"q": q, "i": i}));
+  });
 
-    urlParams = {};
-    while (match = search.exec(query))
-       urlParams[decode(match[1])] = decode(match[2]);
-})();
+  $("body").append(_.template($("#outroTemplate").html()));
+  $("#outro").attr("data-slideindex", quiz.length);
 
-//////////////////////////////////////////////////////////////////////////////////////////
-// DRAWING FUNCTIONS /////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
+  $("#start").click(function(e) {
+    $('.slide.question[data-slideindex="0"]').show();
+    $(e.target).hide();
 
-function drawArrow(parent, from, to, degrees, clockwise) {
-  /*
-  PARAMETERS:
-    parent:     the svg container or element to which to append the arrow
-    from, to:   where to draw the arrow from and to, in any of four forms (in any mix):
-                  a DOM element:            document.getElementById("hed")
-                  a jQuery element:         $("#hed")
-                  a D3 element:             d3.select("#hed")
-                  a coordinate array [x,y]: [100,200]
-    degrees:    the angle which the arc of the arrow will subtend.
-                  90 for a gentle arc, 180 for a bigger swoop.
-                  beyond 180, it gets gentler again, because of the way SVG computes arc.
-                  pass 0 or 360 for a straight arrow.
-    clockwise:  boolean determining whether arrow will swoop clockwise (true) or counterclockwise (false)
-  */
+    // scroll to bottom of page (to reveal first question)
+    $('html, body').animate({
+       scrollTop: $(document).height()-$(window).height()},
+       500,
+       "swing"
+    );
+  })
 
-  // ZEROTH, figure out which points to draw between, for when from and to are spatially-extended elements
+  $("button.choice").click(function(e) {
+    var button = $(e.target);
+    var slide = button.closest(".question");
 
-  // "corners" are coordinates of points that are eligible to be connected
-  function getCorners(element) {
-    if(element instanceof Array && !element.data) {
-      //an array hopefully containing [x,y] was passed in
-      return [{"x":element[0],"y":element[1]}];
-    } else if(element.jquery) {
-      //a jquery element was passed in; convert to DOM element
-      return edgesToCorners(element[0]);
-    } else if(element.nodeType) {
-      //a DOM element was directly passed in
-      return edgesToCorners(element);
+    // show points and text
+    slide.find("button").removeClass("active");
+    button.addClass("active");
+    slide.find("p").text(button.data("text"));
+
+    // update point total
+    var answers = $(".choice.active");
+    var pointTotal = answers.toArray().reduce(function(a,b) {
+      return a + $(b).data("points");
+    }, 0);
+    $("#point-total").text(pointTotal);
+    $("#point-total-text").text(pointText(pointTotal));
+
+    // progressive reveal (show next slide)
+    var nextSlide = button.data("nextslide") ? button.data("nextslide") : slide.data("slideindex")+1;
+    $('.slide[data-slideindex="'+nextSlide+'"]').show();
+
+    // scroll to bottom of page (to reveal next question)
+    $('html, body').animate({
+       scrollTop: $(document).height()-$(window).height()},
+       500,
+       "swing"
+    );
+  })
+
+  function pointText(points) {
+    if(points>5) {
+      return "You get a raise!";
+    } else if (points >= 0) {
+      return "Tread carefully. Oh, and maybe get some highlights.";
     } else {
-      //assume it's a D3 element (sloppy, yes)
-      return edgesToCorners(element[0][0]);
+      return "Have you thought about quitting your job?";
     }
   }
 
-  // gets from the sides of a bounding rect (left, right, top, bottom)
-  //      to its corners (topleft, topright, bottomleft, bottomright)
-  function edgesToCorners(element) {
-    var corners = [];
-    ["left","right"].forEach(function(i) { ["top","bottom"].forEach(function(j) { corners.push({"x":i,"y":j}); }); });
-    return corners.map(function(corner) {
-      return {"x":element.getBoundingClientRect()[corner.x],
-              "y":element.getBoundingClientRect()[corner.y]};
-    });
-  }
-
-  var fromCorners = getCorners(from),
-      toCorners = getCorners(to),
-      fromClosest, toClosest, d;
-
-  // check all possible combinations of eligible endpoints for the shortest distance
-  fromCorners.forEach(function(fromVal) {
-    toCorners.forEach(function(toVal) {
-      if(d==null || distance(fromVal,toVal)<d) {
-        d = distance(fromVal,toVal);
-        fromClosest = fromVal;
-        toClosest = toVal;
-      }
-    });
-  });
-
-  from = fromClosest;
-  to = toClosest;
-
-  /*
-  FIRST, compute radius of circle from desired degrees for arc to subtend.
-    read up:  http://mathworld.wolfram.com/Chord.html
-          http://www.wolframalpha.com/input/?i=angle+subtended
-    n.b.:  bizweek only uses circular arcs, but SVG allows for any ellipse, so r1 == r2 in SVG path below
-        bizweek arrows typically subtend 90 or 180 degrees
-  */
-
-  // bound acceptable {degrees}, between 1 and 359
-  degrees = Math.max(degrees, 1);
-  degrees = Math.min(degrees, 359);
-
-  // get the chord length ("height" {h}) between points, by pythagorus
-  var h = Math.sqrt(Math.pow((to.x-from.x),2)+Math.pow((to.y-from.y),2));
-
-  // get the distance at which chord of height h subtends {angle} degrees
-  var radians = degrees * Math.PI/180;
-  var d = h / ( 2 * Math.tan(radians/2) );
-
-  // get the radius {r} of the circumscribed circle
-  var r = Math.sqrt(Math.pow(d,2)+Math.pow((h/2),2));
-
-  /*
-  SECOND, compose the corresponding SVG arc.
-    read up: http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands
-    example: <path d = "M 200 50 a 90 90 0 0 1 100 0"/>
-  */
-  var path = "M " + from.x + " " + from.y + " a " + r + " " + r + " 0 0 "+(clockwise ? "1" : "0")+" " + (to.x-from.x) + " " + (to.y-from.y);
-
-  // append path to given {parent} (with class .arrow)
-  var arrow = parent.append("path")
-    .attr("d", path)
-    .attr("marker-end", "url(#arrowhead)")
-    .attr("class", "arrow");
-
-  // return a reference to the appended arrow
-  return arrow;
-}
-
-function distance(from, to) {
-  return Math.sqrt(Math.pow(to.x-from.x,2)+Math.pow(to.y-from.y,2));
-}
-
-// ripped straight from mike bostock here
-// http://bl.ocks.org/mbostock/7555321
-// (hello mike. say the word and half the dataviz web will break.)
-function wrap(text, width) {
-  text.each(function() {
-    var text = d3.select(this),
-        words = text.text().split(/\s+/).reverse(),
-        word,
-        line = [],
-        lineNumber = 0,
-        lineHeight = 1.1, // ems
-        y = text.attr("y"),
-        dy = parseFloat(text.attr("dy")),
-        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
-    while (word = words.pop()) {
-      line.push(word);
-      tspan.text(line.join(" "));
-      if (tspan.node().getComputedTextLength() > width) {
-        line.pop();
-        tspan.text(line.join(" "));
-        line = [word];
-        tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
-      }
-    }
-  });
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////
-// NUMBER FORMATTING /////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
-
-// only return powers of 10; return blanks for anything else. (for log axis ticks.)
-function bbwNumberFormatLog(dolla) {
-    return (Math.round((Math.log(dolla) / Math.LN10) * 100) / 100) % 1 == 0 ? bbwNumberFormat(dolla) : "";
-}
-
-// adapted from d3.formatPrefix
-function bbwNumberFormat(dolla) {
-  var base = Math.max(1, Math.min(1e12, dolla));
-  var scaler = bbwFormatPrefix(base);
-  return parseFloat(scaler.scale(dolla).toPrecision(3))+scaler.symbol;
-}
-var bbw_formatPrefixes = [ "p", "n", "µ", "m", "", "k", "m", "b", "t" ].map(bbw_formatPrefix);
-function bbwFormatPrefix(value, precision) {
-	var i = 0;
-	if (value) {
-		if (value < 0) value *= -1;
-		if (precision) value = d3.round(value, d3_format_precision(value, precision));
-		i = 1 + Math.floor(1e-12 + Math.log(value) / Math.LN10);
-		i = Math.max(-24, Math.min(24, Math.floor((i <= 0 ? i + 1 : i - 1) / 3) * 3));
-	}
-	return bbw_formatPrefixes[4 + i / 3];
-};
-function bbw_formatPrefix(d, i) {
-	var k = Math.pow(10, Math.abs(4 - i) * 3);
-	return {
-		scale: i > 4 ? function(d) {
-			return d / k;
-		} : function(d) {
-			return d * k;
-		},
-		symbol: d
-	};
-}
-
-// Convert Excel dates into JS date objects
-// @author https://gist.github.com/christopherscott/2782634
-// @param excelDate {Number}
-// @return {Date}
-function getDateFromExcel(excelDate) {
-  // 1. Subtract number of days between Jan 1, 1900 and Jan 1, 1970, plus 1 (Google "excel leap year bug")
-  // 2. Convert to milliseconds.
-	return new Date((excelDate - (25567 + 1))*86400*1000);
 }

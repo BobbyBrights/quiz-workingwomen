@@ -1,30 +1,3 @@
-body {
-  background: #ffffff;
-  color: #444444;
-  line-height: 1.231;
-	font-family: Georgia, serif;
-}
-
-body.dark_layout {
-  background: #1a1a1a;
-}
-
-body.half {
-  width: 315px;
-}
-
-body.full {
-  width: 630px;
-}
-
-body.wide {
-  width: 970px;
-}
-
-a {
-  text-decoration: none;
-}
-
 /* BBW WEBFONT DEFINITIONS */
 
 @font-face {
@@ -101,57 +74,7 @@ a {
   font-stretch: normal;
 }
 
-/* OTHER TEMPLATE */
-
-.hed {
-  font-family: BWHaasHead;
-}
-
-.dek {
-}
-
-.data-credit {
-  text-transform: uppercase;
-  text-align: right;
-  font-size: 10px;
-  margin-top: 50px;
-}
-
-.wide .data-credit {
-  text-align: center;
-}
-
-/* HELPER STUFF */
-
-.ir {
-  text-indent: -119988px;
-  overflow: hidden;
-  text-align: left;
-  direction: ltr;
-  background-repeat: no-repeat;
-}
-
-.clear {
-  clear: both;
-  margin: 20px;
-}
-
-/* SVG */
-
-#svg-canvas.fullscreen {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-path.arrow, polyline.arrow {
-  fill: none;
-  stroke: black;
-  stroke-width: 1;
-}
-
-/* ETC QUIZ */
+/* PAGE */
 
 * {
   -webkit-box-sizing: border-box;
@@ -165,16 +88,15 @@ html {
   padding: 0;
 }
 
-body, ul, li {
+body {
+  background: #ffffff;
   padding: 0;
   margin: 0;
   border: 0;
-}
-
-body {
+  color: #444444;
+  line-height: 1.231;
+  font-family: Georgia, serif;
   font-size: 12px;
-  color: black;
-  background: white;
 }
 
 .slide {
@@ -191,6 +113,10 @@ body {
 }
 #outro {
   display:none;
+}
+
+a {
+  text-decoration: none;
 }
 
 h2 {
@@ -219,10 +145,6 @@ h2.question {
 }
 #title strong {
   font-family: DrukWideSuper;
-}
-
-.preview {
-  text-align: center;
 }
 
 button {
@@ -286,27 +208,15 @@ button[data-points="1"] .points {
   background: #0f0;
 }
 
-/* thx http://jsfiddle.net/mandynicole/7xrKP/ */
-.pulser {
-    border: 3px solid #f0f;
-    -webkit-border-radius: 30px;
-    height: 35px;
-    width: 35px;
-    position: absolute;
-    -webkit-animation: pulsate 1s ease-out;
-    -webkit-animation-iteration-count: infinite;
-    opacity: 0.0
-}
-@-webkit-keyframes pulsate {
-    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
-    50% {opacity: 1.0;}
-    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+.data-credit {
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 10px;
+  margin-top: 50px;
 }
 
-.nav-arrow-wrapper .pulser {
-  right:3px;
-  top:2px;
-  z-index:-1;
+.clear {
+  clear: both;
 }
 
 @media (max-width: 360px) {
@@ -318,8 +228,4 @@ button[data-points="1"] .points {
 
 @media (min-width: 361px) {
   /* desktop view */
-  .slide {
-    float: left;
-    width: 360px;
-  }
 }
