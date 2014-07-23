@@ -103,21 +103,25 @@ var quiz = [
     ]
   }
 ];
-var slideCount = quiz.length+2;
 
 function loaded () {
 
+  // quiz intro
   $("body").append(_.template($("#introTemplate").html()));
 
+  // add questions
   var template = $("#quizTemplate").html();
   _.each(quiz, function(q, i) {
     $("body").append(_.template(template, {"q": q, "i": i}));
   });
 
+  // add outro
   $("body").append(_.template($("#outroTemplate").html()));
   $("#outro").attr("data-slideindex", quiz.length);
 
+  // when start button is clicked...
   $("#start").click(function(e) {
+    // it shows the first question and hides the start button
     $('.slide.question[data-slideindex="0"]').show();
     $(e.target).hide();
 
@@ -160,6 +164,7 @@ function loaded () {
 
 }
 
+// just maps points to conclusion descriptions
 function pointText(points) {
   if(points>5) {
     return "You get a raise!";
