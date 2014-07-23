@@ -2,7 +2,7 @@ body {
   background: #ffffff;
   color: #444444;
   line-height: 1.231;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: Georgia, serif;
 }
 
 body.dark_layout {
@@ -60,6 +60,44 @@ a {
      url('http://www.businessweek.com/assets/web_fonts/bwhaasgrotesktext-65medium.ttf') format('truetype');
   font-style: normal;
   font-weight: 700;
+  font-stretch: normal;
+}
+
+/* DRUK! */
+/* Druk Medium */
+@font-face {
+  font-family: 'DrukMedium';
+  src: url('Druk-Medium-Web.eot');
+  src: url('Druk-Medium-Web.eot?#iefix') format('embedded-opentype'),
+     url('Druk-Medium-Web.woff') format('woff'),
+     url('Druk-Medium-Web.ttf') format('truetype'),
+     url('Druk-Medium-Web.svg#Druk Web') format('svg');
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+/* Druk Bold */
+@font-face {
+  font-family: 'DrukBold';
+  src: url('Druk-Bold-Web.eot');
+  src: url('Druk-Bold-Web.eot?#iefix') format('embedded-opentype'),
+     url('Druk-Bold-Web.woff') format('woff'),
+     url('Druk-Bold-Web.ttf') format('truetype'),
+     url('Druk-Bold-Web.svg#Druk Web') format('svg');
+  font-weight:  700;
+  font-style:   normal;
+  font-stretch: normal;
+}
+/* Druk Wide Super */
+@font-face {
+  font-family: 'DrukWideSuper';
+  src: url('DrukWide-Super-Web.eot');
+  src: url('DrukWide-Super-Web.eot?#iefix') format('embedded-opentype'),
+     url('DrukWide-Super-Web.woff') format('woff'),
+     url('DrukWide-Super-Web.ttf') format('truetype'),
+     url('DrukWide-Super-Web.svg#Druk Wide Web') format('svg');
+  font-weight:  900;
+  font-style:   normal;
   font-stretch: normal;
 }
 
@@ -161,21 +199,26 @@ h2 {
 }
 
 h2.question {
-  background: #000;
+  background: black;
   color: white;
   border-radius: 9px;
   border: 2px solid black;
   text-transform: uppercase;
   padding: 10px;
-  font-weight: bold;
   text-shadow: none;
   display: inline;
+  font-family: DrukMedium;
+  font-size: 20pt;
 }
 
 #title {
   margin: 0;
-  font-size: 20pt;
-  font-family: BWHaasHead;
+  font-size: 30pt;
+  font-family: DrukMedium;
+  text-transform: uppercase;
+}
+#title strong {
+  font-family: DrukWideSuper;
 }
 
 .preview {
@@ -183,12 +226,13 @@ h2.question {
 }
 
 button {
+  font-family: DrukMedium;
+  font-size: 20pt;
   background: #ddd;
   border-radius: 10px;
   border: 3px solid black;
   text-transform: uppercase;
   padding: 10px;
-  font-weight: bold;
 }
 
 button[data-points="-1"] {
