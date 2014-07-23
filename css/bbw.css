@@ -104,7 +104,11 @@ body {
   font-size: 13pt;
   position: relative;
   text-shadow: #fff 1px 1px 0px;
-  margin: 30px;
+  margin: 10px 10px 30px 10px;
+}
+
+.slide.question p {
+  margin-top: 0;
 }
 
 /* progressive reveal of quiz slides */
