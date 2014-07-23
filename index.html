@@ -21,6 +21,9 @@
 
   <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
   <link href="apple-touch-icon-precomposed.png" rel="apple-touch-icon" type="image/png" />
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/more-animations.css">
+
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/h5bp.css">
@@ -49,6 +52,9 @@ font-family:BWHaasRegular
   <script type="text/html" id="quizTemplate">
   <div class="slide question" data-slideindex="<%= q.id %>">
     <h2 class="question"><%= q.question %></h2>
+    <div class="img-container <%= q.className %>">
+      <img class="<%= q.animateIn %>" src="img/<%= q.img %>"></img>
+    </div>
     <div class="clear" style="clear:both;margin:20px;"></div>
     <% _.each(q.choices, function(choice) { %>
       <button class="choice" data-points="<%= choice.points %>" data-text="<%= choice.text %>" data-nextslide="<%= choice.next %>">
@@ -56,7 +62,6 @@ font-family:BWHaasRegular
         <div class="points"><%=choice.points%></div>
       </button>
     <% }); %>
-    <img class="boss" src="img/boss.jpg"></img>
     <div class="point-div">+1</div>
     <p class="choice-text"></p>
   </div>
@@ -92,6 +97,10 @@ function loaded () {
   var quiz = [
     { "id": 0,
       "question": "IS YOUR BOSS A MAN?",
+      "img": "ezimba.gif",
+      "animateIn": "animated bounceInLeft",
+      "animateOut": "animated bounceOutLeft",
+      "className": "boss",
       "choices": [
         { "button": "Yes",
           "text": "Of course. According to a 2013 Gallup poll, 54% of Americans have a male boss, versus 30% with a female one. Actually, 35% of Americans would rather work for a man, while 40% have no preference either way.",
@@ -105,6 +114,10 @@ function loaded () {
     },
     { "id": 1,
       "question": "DOES HE HAVE A WIFE?",
+      "img": "rings.jpg",
+      "animateIn": "animated tada",
+      "animateOut": "animated bounceOutRight",
+      "className": "wife",
       "choices": [
         { "button": "Yes",
           "text": "",
@@ -118,6 +131,10 @@ function loaded () {
     },
     { "id": 2,
       "question": "DOES HIS WIFE WORK?",
+      "img": "notebook.jpg",
+      "animateIn": "animated bounceInLeft",
+      "animateOut": "animated bounceOutLeft",
+      "className": "wife-work",
       "choices": [
         { "button": "Yes",
           "text": "Great! In a UNC Kenan Flagler Business School study, male managers married to working women were more likely to recommend female candidates over males for new positions.",
@@ -132,6 +149,10 @@ function loaded () {
     },
     { "id": 3,
       "question": "DOES HE HAVE A DAUGHTER?",
+      "img": "daughter.jpg",
+      "animateIn": "slideDown",
+      "animateOut": "animated bounceOutDown",
+      "className": "daughter",
       "choices": [
         { "button": "Yes",
           "text": "Excellent! If a male CEO has a first child who’s a girl, a female employee’s wages will rise by 1.1%. Male employees see a much smaller rise, according to a 2012 issue of Administrative Science Quarterly.",
@@ -146,6 +167,10 @@ function loaded () {
     },
     { "id": 4,
       "question": "ARE YOU BLOND?",
+      "img": "blond.jpg",
+      "animateIn": "animated bounceInLeft",
+      "animateOut": "animated bounceOutLeft",
+      "className": "blond",
       "choices": [
         { "button": "Yes",
           "text": "U. of Queensland researchers found blondes make 7% more",
@@ -157,6 +182,10 @@ function loaded () {
     },
     { "id": 5,
       "question": "DO YOU FLIRT AT WORK?",
+      "img": "ezimba.gif",
+      "animateIn": "animated bounceInLeft",
+      "animateOut": "animated bounceOutLeft",
+      "className": "flirt",
       "choices": [
         { "button": "Yes",
           "text": "Go for it. In 2012, Berkeley’s Haas School of Business found that women could flirt their way into higher prices when selling cars to men. In 2009, former Sec. of State Madeline Albright told Bill Maher that she flirted with foreign dignitaries so they’d concur.",
@@ -168,6 +197,10 @@ function loaded () {
     },
     { "id": 6,
       "question": "DO YOU DRESS UP FOR WORK?",
+      "img": "ezimba.gif",
+      "animateIn": "animated bounceInLeft",
+      "animateOut": "animated bounceOutLeft",
+      "className": "dress",
       "choices": [
         { "button": "Yes",
           "text": "￼Well done. According to Proctor & Gamble-funded psychology research conducted at Harvard U., people think women wearing makeup look more competent and professional than those who don’t.",
@@ -179,6 +212,10 @@ function loaded () {
     },
     { "id": 7,
       "question": "HOW’S YOUR WEIGHT?",
+      "img": "ezimba.gif",
+      "animateIn": "animated bounceInLeft",
+      "animateOut": "animated bounceOutLeft",
+      "className": "weight",
       "choices": [
         { "button": "I'm good",
           "text": "Nice! Many studies have proven a woman’s weight has a significant effect on her earnings potential. The Journal of Applied Psychology reported in 2010 that even very thin women are punished when they gain a little.",
@@ -190,6 +227,10 @@ function loaded () {
     },
     { "id": 8,
       "question": "￼DO YOU HAVE GOOD POSTURE?",
+      "img": "ezimba.gif",
+      "animateIn": "animated bounceInLeft",
+      "animateOut": "animated bounceOutLeft",
+      "className": "posture",
       "choices": [
         { "button": "Yes",
           "text": "A Harvard Business School study says you’ll look more powerful.",
@@ -212,8 +253,14 @@ function loaded () {
   $("body").append(_.template($("#outroTemplate").html()));
   $("#outro").attr("data-slideindex", quiz.length);
 
-  $("#start").click(function() {
+  $("#start").click(function(e) {
+    var button = $(e.target);
     $('.slide.question[data-slideindex="0"]').show();
+    var animateClass = quiz[0].animateOut
+    var img = button.parent().next().find('img')
+    img.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+      img.addClass(animateClass)
+    })
   })
 
   $("button.choice").click(function(e) {
@@ -263,6 +310,13 @@ function loaded () {
     // progressive reveal (show next slide)
     var nextSlide = button.data("nextslide") ? button.data("nextslide") : slide.data("slideindex")+1;
     $('.slide[data-slideindex="'+nextSlide+'"]').show();
+
+    var animateClass = quiz[nextSlide].animateOut
+    var img = $('.slide[data-slideindex="'+nextSlide+'"] img')
+    img.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+      img.addClass(animateClass)
+    })
+
 
     // scroll to bottom of page (to reveal next question)
     $('html, body').animate({

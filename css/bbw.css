@@ -336,19 +336,38 @@ button[data-points="1"] .points {
 }
 
 /*img styling*/
-img {
-  max-width: 20% !important;
-  height:auto;
-  display:block;
+
+.img-container {
+  position: relative;
+  width: 0;
+  height: 0;
+  left: 10%;
+  top: 60px;
 }
 
-.boss {
+.question img {
+  bottom: 0px;
+  left: 0px;
+  /*max-width: 20% !important;*/
+  /*height:auto;*/
   position: absolute;
   display: block;
-  bottom: 40px;
-  left: 15%;
-  /*height: 150px;*/
+  height: auto;
+  max-width: 200px;
 }
+
+.wife {
+  left: 65%;
+}
+
+.wife-work {
+  top: 100px;
+}
+
+.daughter {
+  top: 100px;
+}
+
 
 @media (max-width: 480px) {
   /* mobile only */
