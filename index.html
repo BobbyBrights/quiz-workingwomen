@@ -7,16 +7,16 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Can a woman ever win at work? - Businessweek</title>
-  <meta name="description" content="">
+  <meta name="description" content="It’s hard enough for a working woman, and now a new study from UNC’s Kenan Flager School of Business found many struggles over promotion and raises may be out of a gal’s control. Take this easy quiz to determine just how screwed you might be, culled from the endless academic research on office gender dynamics.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 
   <meta name="twitter:card" content="photo">
   <meta name="twitter:site" content="bizweekgraphics">
   <meta name="twitter:creator" content="tophtucker">
   <meta name="twitter:title" content="Can a woman ever win at work?">
-  <meta name="twitter:image" content="http://">
+  <!--<meta name="twitter:image" content="http://">
   <meta name="twitter:image:width" content="100">
-  <meta name="twitter:image:height" content="100">
+  <meta name="twitter:image:height" content="100">-->
   <meta name="twitter:domain" content="http://bizweekgraphics.com/">
 
   <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
@@ -33,18 +33,13 @@
 </head>
 
 <!--
-Body classes:
-.iframed    // no interface wrapping, no margins
-.dark_layout  // like bbw video site
-.half      // half-width of standard article (315px)
-.full      // full-width of standard article (630px)
-.wide      // wide interactive feature layout (970px)
-
 Fonts:
 font-family:BloombergLBold    // corporate wordmark logotype
 font-family:BWHaasHead
 font-family:BWHaasHead75Bold
 font-family:BWHaasRegular
+font-family:DrukMedium
+font-family:DrukWideSuper
 -->
 
 <body onload="loaded()">
@@ -52,17 +47,25 @@ font-family:BWHaasRegular
   <script type="text/html" id="quizTemplate">
   <div class="slide question" data-slideindex="<%= q.id %>">
     <h2 class="question"><%= q.question %></h2>
+<<<<<<< HEAD
     <div class="img-container <%= q.className %>">
       <img class="<%= q.animateIn %>" src="img/<%= q.img %>"></img>
     </div>
     <div class="clear" style="clear:both;margin:20px;"></div>
+=======
+    <div class="choices">
+>>>>>>> e2642450ae17907209590f3ae47774426cc5fcb2
     <% _.each(q.choices, function(choice) { %>
       <button class="choice" data-points="<%= choice.points %>" data-text="<%= choice.text %>" data-nextslide="<%= choice.next %>">
         <%= choice.button %>
         <div class="points"><%=choice.points%></div>
       </button>
     <% }); %>
+<<<<<<< HEAD
     <div class="point-div">+1</div>
+=======
+    </div>
+>>>>>>> e2642450ae17907209590f3ae47774426cc5fcb2
     <p class="choice-text"></p>
   </div>
   </script>
@@ -70,7 +73,7 @@ font-family:BWHaasRegular
   <script type="text/html" id="introTemplate">
   <div class="slide" id="intro">
     <a href="http://businessweek.com/" title="Bloomberg Businessweek"><img src="apple-touch-icon-precomposed.png" width="50"></a>
-    <h2 id="title">Can a woman ever win at work?</h2>
+    <h2 id="title">Can a woman <strong>ever</strong> win at work?</h2>
     <p id="description">It’s hard enough for a working woman, and now a new study from UNC’s Kenan Flager School of Business found many struggles over promotion and raises may be out of a gal’s control. Take this easy quiz to determine just how screwed you might be, culled from the endless academic research on office gender dynamics.</p>
     <button id="start">Start</button>
   </div>
@@ -85,11 +88,11 @@ font-family:BWHaasRegular
   </div>
   </script>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+  <script src="js/vendor/jquery-1.10.2.min.js"></script>
   <script src="js/vendor/underscore-min.js"></script>
   <script src="js/main.js"></script>
 
+<<<<<<< HEAD
 <script>
 
 function loaded () {
@@ -351,6 +354,19 @@ function loaded () {
   ga('send', 'pageview');
 
 </script>
+=======
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-48575462-1', 'bizweekgraphics.com');
+    ga('send', 'pageview');
+
+  </script>
+>>>>>>> e2642450ae17907209590f3ae47774426cc5fcb2
 
 </body>
 </html>
