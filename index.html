@@ -81,7 +81,7 @@ font-family:DrukWideSuper
   <div class="slide animated bounceInLeft" id="outro">
     <h2><span id="point-total">0</span> points</h2>
     <p id="point-total-text">Outro description text</p>
-    <a id="story-link" href="#"><button>Call to action</button></a>
+    <a id="story-link" href="#"><button class="waves-effect waves-button waves-light waves-float">Call to action</button></a>
     <div class="data-credit">Sources???</div>
   </div>
   </script>
@@ -384,11 +384,13 @@ function loaded () {
 
     // scroll to bottom of page (to reveal next question)
     setTimeout(function() {
-      $('html, body').animate({
-         scrollTop: document.body.scrollHeight},
-         600,
-         "swing"
-      );      
+      if($('#outro').css('display') === "none"){
+        $('html, body').animate({
+           scrollTop: document.body.scrollHeight},
+           600,
+           "swing"
+        );      
+      }
     }, 1000)
 
     var thisSlide = button.parent().parent().data('slideindex')

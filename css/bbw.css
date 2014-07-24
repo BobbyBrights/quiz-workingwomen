@@ -415,6 +415,7 @@ button[data-points="1"] .points {
 }
 
 .question img {
+  pointer-events: none;
   bottom: 0px;
   left: 0px;
   /*max-width: 20% !important;*/
@@ -468,6 +469,10 @@ button[data-points="1"] .points {
           animation: raptorCrawl 2s;
           -webkit-animation-delay: 2s; /* Safari and Chrome */
           animation-delay: 2s;
+}
+
+#story-link {
+  color: black;
 }
 
 
