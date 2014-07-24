@@ -402,6 +402,7 @@ function loaded () {
       img.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
         img.removeClass()
         img.addClass(animateClass)
+        pointDiv.addClass('pulse-text')
       })
 
   })

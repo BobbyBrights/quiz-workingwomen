@@ -302,12 +302,14 @@ button.choice .points {
 }
 
 .point-div {
+  opacity: .5;
   display: none;
+  height: 30px;
   width: 20%;
   padding: 10px;
   margin: 0 auto;
   margin-top: .25em;
-  margin-bottom: .25em;
+  margin-bottom: .75em;
   border-radius: 10px;
   -webkit-animation: zoomHuge .5s; /* Safari and Chrome */
      -moz-animation: zoomHuge .5s; /* Firefox */
@@ -319,7 +321,10 @@ button.choice .points {
        -o-transition: background-color .5s linear;
       -ms-transition: background-color .5s linear;
           transition: background-color .5s linear;
-  -webkit-animation: pulseText 1s infinite;
+}
+
+.pulse-text {
+    -webkit-animation: pulseText 1s infinite;
      -moz-animation: pulseText 1s infinite;
        -o-animation: pulseText 1s infinite;
       -ms-animation: pulseText 1s infinite;
