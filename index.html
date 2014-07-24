@@ -47,25 +47,19 @@ font-family:DrukWideSuper
   <script type="text/html" id="quizTemplate">
   <div class="slide question" data-slideindex="<%= q.id %>">
     <h2 class="question"><%= q.question %></h2>
-<<<<<<< HEAD
     <div class="img-container <%= q.className %>">
       <img class="<%= q.animateIn %>" src="img/<%= q.img %>"></img>
     </div>
     <div class="clear" style="clear:both;margin:20px;"></div>
-=======
     <div class="choices">
->>>>>>> e2642450ae17907209590f3ae47774426cc5fcb2
     <% _.each(q.choices, function(choice) { %>
       <button class="choice" data-points="<%= choice.points %>" data-text="<%= choice.text %>" data-nextslide="<%= choice.next %>">
         <%= choice.button %>
         <div class="points"><%=choice.points%></div>
       </button>
     <% }); %>
-<<<<<<< HEAD
     <div class="point-div">+1</div>
-=======
     </div>
->>>>>>> e2642450ae17907209590f3ae47774426cc5fcb2
     <p class="choice-text"></p>
   </div>
   </script>
@@ -92,7 +86,6 @@ font-family:DrukWideSuper
   <script src="js/vendor/underscore-min.js"></script>
   <script src="js/main.js"></script>
 
-<<<<<<< HEAD
 <script>
 
 function loaded () {
@@ -355,7 +348,6 @@ function loaded () {
   ga('send', 'pageview');
 
 </script>
-=======
   <!-- Google Analytics -->
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -367,7 +359,6 @@ function loaded () {
     ga('send', 'pageview');
 
   </script>
->>>>>>> e2642450ae17907209590f3ae47774426cc5fcb2
 
 </body>
 </html>
