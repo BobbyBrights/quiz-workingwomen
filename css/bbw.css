@@ -492,7 +492,7 @@ button[data-points="1"] .points {
 @media (min-width: 361px) {
   /* desktop view */
   body {
-    max-width: 600px;
+    max-width: 970px;
     margin: 0 auto;
   }
   #title {
@@ -505,3 +505,5 @@ button[data-points="1"] .points {
     font-size: 48px;
   }
 }
+
+

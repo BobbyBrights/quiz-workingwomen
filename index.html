@@ -68,7 +68,7 @@ font-family:DrukWideSuper
   <script type="text/html" id="introTemplate">
   <div class="slide" id="intro">
     <a href="http://businessweek.com/" title="Bloomberg Businessweek"><img src="apple-touch-icon-precomposed.png" width="50"></a>
-    <h2 id="title">Can a woman <strong>ever</strong> win at work?</h2>
+    <h2 id="title">Can a woman<br><strong>ever</strong><br>win at work?</h2>
     <p id="description">It’s hard enough for a working woman, and now a new study from UNC’s Kenan Flager School of Business found many struggles over promotion and raises may be out of a gal’s control. Take this easy quiz to determine just how screwed you might be, culled from the endless academic research on office gender dynamics.</p>
     <button id="start">Start</button>
   </div>
@@ -80,7 +80,6 @@ font-family:DrukWideSuper
     <p id="point-total-text">Outro description text</p>
     <a id="story-link" href="#"><button>Call to action</button></a>
     <div class="data-credit">Sources???</div>
-    <img class="raptor" src="img/phone.jpg"></img>
   </div>
   </script>
 
@@ -196,7 +195,7 @@ function loaded () {
     { "id": 6,
       "question": "DO YOU DRESS UP FOR WORK?",
       "img": "shoes.jpg",
-      "animateIn": "animated zoomInRight",
+      "animateIn": "animated swing",
       "animateOut": "animated zoomOutRight",
       "className": "dress",
       "choices": [
@@ -327,7 +326,6 @@ function loaded () {
       );      
     }, 1000)
 
-    setTimeout(function() {
       var animateClass = quiz[nextSlide-1].animateOut
       var imgContainer = $('.slide[data-slideindex="'+(nextSlide - 1)+'"] .img-container')
       $(imgContainer).removeClass('hide-img')
@@ -336,7 +334,6 @@ function loaded () {
         img.removeClass()
         img.addClass(animateClass)
       })
-    }, 0)
 
   })
 
