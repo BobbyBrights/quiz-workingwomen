@@ -319,6 +319,11 @@ button.choice .points {
        -o-transition: background-color .5s linear;
       -ms-transition: background-color .5s linear;
           transition: background-color .5s linear;
+  -webkit-animation: pulseText 1s infinite;
+     -moz-animation: pulseText 1s infinite;
+       -o-animation: pulseText 1s infinite;
+      -ms-animation: pulseText 1s infinite;
+          animation: pulseText 1s infinite;
 }
 
 @keyframes fadein {
