@@ -317,7 +317,7 @@ button.choice .points {
 .point-div {
   display: none;
   height: 30px;
-  width: 20%;
+  width: 100% !important;
   padding: 10px;
   margin: 0 auto;
   margin-top: .25em;
