@@ -285,15 +285,15 @@ function loaded () {
     pointDiv.css('display', 'block')    
 
     if(button.data('points') === 1) {
-      pointDiv.text('+1')
+      pointDiv.text('+1 Point')
       pointDiv.css('color', '#0f0')
       pointDiv.data('points', 1)
     } else if (button.data('points') === -1) {
-      pointDiv.text('-1')
+      pointDiv.text('-1 Point')
       pointDiv.css('color', 'red')
       pointDiv.data('points', -1)
     } else {
-      pointDiv.text('+0')
+      pointDiv.text('+0 Points')
       pointDiv.css('color', 'black')
       pointDiv.data('points', 0)
     }
@@ -342,10 +342,12 @@ function loaded () {
       );      
     }, 1000)
 
-      var animateClass = quiz[nextSlide-1].animateOut
-      var imgContainer = $('.slide[data-slideindex="'+(nextSlide - 1)+'"] .img-container')
+    var thisSlide = button.parent().parent().data('slideindex')
+
+      var animateClass = quiz[thisSlide].animateOut
+      var imgContainer = $('.slide[data-slideindex="'+(thisSlide)+'"] .img-container')
       $(imgContainer).removeClass('hide-img')
-      var img = $('.slide[data-slideindex="'+(nextSlide-1)+'"] img')
+      var img = $('.slide[data-slideindex="'+(thisSlide)+'"] img')
       img.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
         img.removeClass()
         img.addClass(animateClass)

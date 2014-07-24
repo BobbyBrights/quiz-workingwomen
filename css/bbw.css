@@ -182,7 +182,7 @@ body {
   font-size: 12px;
   font-family: helvetica, arial;
   color: black;
-  background: white;
+  background: transparent;
 }
 
 .slide {
@@ -191,7 +191,7 @@ body {
   position: relative;
   margin: 30px;
   /*text-shadow: #fff 1px 1px 0px;*/
-  margin: 10px 10px 30px 10px;
+  margin: 10px 10px 80px 10px;
 }
 
 .slide.question p {
@@ -240,6 +240,7 @@ h2.question {
   font-weight:  500;
   font-style:   normal;
   font-stretch: normal;
+  line-height: 75px;
 }
 #title strong {
   font-family: 'Druk Wide Web';
@@ -308,7 +309,6 @@ button.choice .points {
   margin-top: .25em;
   margin-bottom: .25em;
   border-radius: 10px;
-  background: white !important;
   -webkit-animation: zoomHuge .5s; /* Safari and Chrome */
      -moz-animation: zoomHuge .5s; /* Firefox */
       -ms-animation: zoomHuge .5s; /* Internet Explorer */
