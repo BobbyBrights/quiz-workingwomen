@@ -336,7 +336,7 @@ function loaded () {
     // scroll to bottom of page (to reveal next question)
     // setTimeout(function() {
       if($('#outro').css('display') === "none"){
-        if(window.innerHeight < 500) {
+        if(window.innerHeight < 600) {
           setTimeout(function() {
             $('html, body').animate({
                scrollTop: document.body.scrollHeight},
