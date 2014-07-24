@@ -302,7 +302,6 @@ button.choice .points {
 }
 
 .point-div {
-  opacity: .5;
   display: none;
   height: 30px;
   width: 20%;
