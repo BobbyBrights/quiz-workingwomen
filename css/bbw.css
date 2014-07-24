@@ -5,7 +5,7 @@ body {
   font-family: sans-serif;
   line-height: 1.231;
   font-family: Helvetica, sans-serif;
-  padding-bottom: 2em;
+  padding-bottom: 2em !important;
 }
 
 body.dark_layout {
@@ -302,10 +302,11 @@ button.choice .points {
 
 .point-div {
   display: none;
-  width: 10%;
+  width: 20%;
   padding: 10px;
   margin: 0 auto;
-  margin-top: 1em;
+  margin-top: .25em;
+  margin-bottom: .25em;
   border-radius: 10px;
   background: #0f0;
   -webkit-animation: zoomHuge .5s; /* Safari and Chrome */
@@ -434,6 +435,7 @@ button[data-points="1"] .points {
 
 .daughter {
   top: 100px;
+  left: 65%;
 }
 
 .flirt {
@@ -450,7 +452,7 @@ button[data-points="1"] .points {
 }
 
 .weight {
-  left: -15%
+  left: -25%
 }
 
 .raptor {
