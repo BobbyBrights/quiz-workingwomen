@@ -340,6 +340,7 @@ function loaded () {
           setTimeout(function() {
             $('html, body').animate({
                scrollTop: document.body.scrollHeight},
+               800,
                "swing"
             );      
 
