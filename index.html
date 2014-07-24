@@ -99,152 +99,201 @@ font-family:DrukWideSuper
 function loaded () {
 
   var quiz = [
-    { "id": 0,
-      "question": "IS YOUR BOSS A MAN?",
-      "img": "ezimba.gif",
-      "animateIn": "animated bounceInLeft",
-      "animateOut": "animated bounceOutLeft",
-      "className": "boss",
-      "choices": [
-        { "button": "Yes",
-          "text": "Of course. According to a 2013 Gallup poll, 54% of Americans have a male boss, versus 30% with a female one. Actually, 35% of Americans would rather work for a man, while 40% have no preference either way.",
-          "points": 1,
-          "next": 1 },
-        { "button": "No",
-          "text": "Watch out. Female bosses ￼might not help you get ahead. In 2012, MIT studied U.S. bank branches where half the managers were women. They were just as unlikely to promote underlings.",
-          "points": 1,
-          "next": 4 }
-      ]
+    {
+        "id": 0,
+        "question": "IS YOUR BOSS A MAN?",
+        "img": "ezimba.gif",
+        "animateIn": "animated bounceInLeft",
+        "animateOut": "animated bounceOutLeft",
+        "className": "boss",
+        "choices": [
+            {
+                "button": "Yes",
+                "text": "Of course. According to a 2013 Gallup poll, 54% of Americans <a href='http://www.gallup.com/poll/165791/americans-prefer-male-boss.aspx'>have a male boss</a>, versus 30% with a female one. Actually, 35% of Americans would rather work for a man, while 40% have no preference either way.",
+                "points": 1,
+                "next": 1
+            },
+            {
+                "button": "No",
+                "text": "Watch out. Female bosses might not help you get ahead. In 2012, MIT studied U.S. bank branches where half the managers were women. They were just as <a href='http://www.projecteve.com/research-says-women-in-leadership-dont-automatically-promote-women-company-wide/'>unlikely to promote underlings</a>.",
+                "points": 1,
+                "next": 4
+            }
+        ]
     },
-    { "id": 1,
-      "question": "DOES HE HAVE A WIFE?",
-      "img": "rings.jpg",
-      "animateIn": "animated tada",
-      "animateOut": "animated bounceOutRight",
-      "className": "wife",
-      "choices": [
-        { "button": "Yes",
-          "text": "",
-          "points": 0,
-          "next": 2 },
-        { "button": "No",
-          "text": "",
-          "points": 0,
-          "next": 3 }
-      ]
+    {
+        "id": 1,
+        "question": "DOES HE HAVE A WIFE?",
+        "img": "rings.jpg",
+        "animateIn": "animated tada",
+        "animateOut": "animated bounceOutRight",
+        "className": "wife",
+        "choices": [
+            {
+                "button": "Yes",
+                "text": "",
+                "points": 0,
+                "next": 2
+            },
+            {
+                "button": "No",
+                "text": "",
+                "points": 0,
+                "next": 3
+            }
+        ]
     },
-    { "id": 2,
-      "question": "DOES HIS WIFE WORK?",
-      "img": "notebook.jpg",
-      "animateIn": "animated bounceInLeft",
-      "animateOut": "animated bounceOutLeft",
-      "className": "wife-work",
-      "choices": [
-        { "button": "Yes",
-          "text": "Great! In a UNC Kenan Flagler Business School study, male managers married to working women were more likely to recommend female candidates over males for new positions.",
-          "points": 1 },
-        { "button": "No",
-          "text": "Bad news: The same research showed married men with stay-at-home wives viewed female colleagues unfavorably and had a tendency to pass them over for promotions.",
-          "points": -1 },
-        { "button": "Not applicable!",
-          "text": "OK, carry on...",
-          "points": 0 }
-      ]
+    {
+        "id": 2,
+        "question": "DOES HIS WIFE WORK?",
+        "img": "notebook.jpg",
+        "animateIn": "animated bounceInLeft",
+        "animateOut": "animated bounceOutLeft",
+        "className": "wife-work",
+        "choices": [
+            {
+                "button": "Yes",
+                "text": "Great! In a UNC Kenan Flagler Business School study, male managers married to working women were more likely to <a href='http://asq.sagepub.com/content/59/2/330.full.pdf+html'>recommend female candidates</a> over males for new positions.",
+                "points": 1
+            },
+            {
+                "button": "No",
+                "text": "Bad news: A UNC Kenan Flagler Business School study showed married men with stay-at-home wives <a href='http://asq.sagepub.com/content/59/2/330.full.pdf+html'>viewed female colleagues unfavorably</a> and had a tendency to pass them over for promotions.",
+                "points": -1
+            },
+            {
+                "button": "Not applicable!",
+                "text": "OK, carry on...",
+                "points": 0
+            }
+        ]
     },
-    { "id": 3,
-      "question": "DOES HE HAVE A DAUGHTER?",
-      "img": "daughter.jpg",
-      "animateIn": "slideDown",
-      "animateOut": "animated bounceOutDown",
-      "className": "daughter",
-      "choices": [
-        { "button": "Yes",
-          "text": "Excellent! If a male CEO has a first child who’s a girl, a female employee’s wages will rise by 1.1%. Male employees see a much smaller rise, according to a 2012 issue of Administrative Science Quarterly.",
-          "points": 1 },
-        { "button": "No",
-          "text": "Eek. Based on the same study, when CEOs have a son, all employees’ wages drop. Fortunately, it’s less than half a percent.",
-          "points": -1 },
-        { "button": "Not applicable!",
-          "text": "OK, carry on...",
-          "points": 0 }
-      ]
+    {
+        "id": 3,
+        "question": "DOES HE HAVE A DAUGHTER?",
+        "img": "daughter.jpg",
+        "animateIn": "slideDown",
+        "animateOut": "animated bounceOutDown",
+        "className": "daughter",
+        "choices": [
+            {
+                "button": "Yes",
+                "text": "Excellent! If a male CEO has a first child who’s a girl, a female employee’s <a href='http://asq.sagepub.com/content/57/4/669.abstract'>wages will rise</a> by 1.1%. Male employees see a much smaller rise, according to a 2012 issue of Administrative Science Quarterly.",
+                "points": 1
+            },
+            {
+                "button": "No",
+                "text": "Eek. When CEOs have a son, <a href='http://asq.sagepub.com/content/57/4/669.abstract'>all employees’ wages drop</a>, according to a 2012 issue of Administrative Science Quarterly. Fortunately, it’s less than half a percent.",
+                "points": -1
+            },
+            {
+                "button": "Not applicable!",
+                "text": "Carry on then.",
+                "points": 0
+            }
+        ]
     },
-    { "id": 4,
-      "question": "ARE YOU BLOND?",
-      "img": "blond.jpg",
-      "animateIn": "animated rollIn",
-      "animateOut": "animated rollOut",
-      "className": "blond",
-      "choices": [
-        { "button": "Yes",
-          "text": "U. of Queensland researchers found blondes make 7% more",
-          "points": 1 },
-        { "button": "No",
-          "text": "Could you be blond?",
-          "points": -1 }
-      ]
+    {
+        "id": 4,
+        "question": "ARE YOU BLOND?",
+        "img": "blond.jpg",
+        "animateIn": "animated rollIn",
+        "animateOut": "animated rollOut",
+        "className": "blond",
+        "choices": [
+            {
+                "button": "Yes",
+                "text": "University of Queensland researchers found <a href='http://faculty-course.insead.edu/popescu/UDJCore/XtraMaterial/Physical%20appearance%20and%20wages%20Do%20blondes%20have%20more%20fun.pdf'>blonds make 7% more</a>.",
+                "points": 1
+            },
+            {
+                "button": "No",
+                "text": "Could you be? University of Queensland researchers found <a href='http://faculty-course.insead.edu/popescu/UDJCore/XtraMaterial/Physical%20appearance%20and%20wages%20Do%20blondes%20have%20more%20fun.pdf'>blonds make 7% more</a>.",
+                "points": -1
+            }
+        ]
     },
-    { "id": 5,
-      "question": "DO YOU FLIRT AT WORK?",
-      "img": "kiss.jpg",
-      "animateIn": "animated zoomSmall",
-      "animateOut": "animated fadeOut",
-      "className": "flirt",
-      "choices": [
-        { "button": "Yes",
-          "text": "Go for it. In 2012, Berkeley’s Haas School of Business found that women could flirt their way into higher prices when selling cars to men. In 2009, former Sec. of State Madeline Albright told Bill Maher that she flirted with foreign dignitaries so they’d concur.",
-          "points": 1 },
-        { "button": "No",
-          "text": "Safety first; flirting can backfire. A 2013 Academy of Management brief said that even though big law firms encouraged strategic flirtation, the women who tried it were looked down upon, considered stupid, and mistreated.",
-          "points": 0 }
-      ]
+    {
+        "id": 5,
+        "question": "DO YOU FLIRT AT WORK?",
+        "img": "kiss.jpg",
+        "animateIn": "animated zoomSmall",
+        "animateOut": "animated fadeOut",
+        "className": "flirt",
+        "choices": [
+            {
+                "button": "Yes",
+                "text": "Go for it. In 2012, Berkeley’s Haas School of Business found that <a href='http://newsroom.haas.berkeley.edu/research-news/study-finds-flirting-can-pay-women-negotiations'>women could flirt</a> their way into higher prices when selling cars to men. In 2009, former Sec. of State Madeline Albright told Bill Maher that she flirted with foreign dignitaries so they’d concur.",
+                "points": 1
+            },
+            {
+                "button": "No",
+                "text": "Safety first; flirting can backfire. A 2013 Academy of Management brief said that even though big law firms <a href='http://aom.org/News/Press-Releases/Masculine-work-environments-encourage-women-to-flirt-–-but-also-exact-a-stiff-price-for-it,-study-finds.aspx'>encouraged strategic flirtation</a>, the women who tried it were looked down upon, considered stupid, and mistreated.",
+                "points": 0
+            }
+        ]
     },
-    { "id": 6,
-      "question": "DO YOU DRESS UP FOR WORK?",
-      "img": "shoes.jpg",
-      "animateIn": "animated swing",
-      "animateOut": "animated zoomOutRight",
-      "className": "dress",
-      "choices": [
-        { "button": "Yes",
-          "text": "￼Well done. According to Proctor & Gamble-funded psychology research conducted at Harvard U., people think women wearing makeup look more competent and professional than those who don’t.",
-          "points": 1 },
-        { "button": "No",
-          "text": "This may be ideal. In a study titled “Intolerance of Sexy Peers,” a McMaster U. researcher discovered women were put off by other women who looked too fancy. 85% preferred a thin blond woman in khakis over the same woman in a short skirt and tall boots.",
-          "points": -1 }
-      ]
+    {
+        "id": 6,
+        "question": "DO YOU DRESS UP FOR WORK?",
+        "img": "shoes.jpg",
+        "animateIn": "animated swing",
+        "animateOut": "animated zoomOutRight",
+        "className": "dress",
+        "choices": [
+            {
+                "button": "Yes",
+                "text": "Well done. According to Proctor & Gamble-funded psychology research conducted at Harvard U., people think women wearing makeup <a href='http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0025656'>look more competent</a> and professional than those who don’t.",
+                "points": 1
+            },
+            {
+                "button": "No",
+                "text": "This may be ideal. In a study titled “<a href='http://www.ncbi.nlm.nih.gov/pubmed/21932332'>Intolerance of Sexy Peers</a>,” a McMaster U. researcher discovered women were put off by other women who looked too fancy. 85% preferred a thin blond woman in khakis over the same woman in a short skirt and tall boots.",
+                "points": -1
+            }
+        ]
     },
-    { "id": 7,
-      "question": "HOW’S YOUR WEIGHT?",
-      "img": "peek.jpg",
-      "animateIn": "animated bounceInLeft",
-      "animateOut": "animated bounceOutLeft",
-      "className": "weight",
-      "choices": [
-        { "button": "I'm good",
-          "text": "Nice! Many studies have proven a woman’s weight has a significant effect on her earnings potential. The Journal of Applied Psychology reported in 2010 that even very thin women are punished when they gain a little.",
-          "points": 1 },
-        { "button": "I could lose a few",
-          "text": "Uh oh. There’s a sad scientific correlation: When a woman’s BMI increases, her income decreases. Her spouse’s does, too. The effect is most profound on younger women without established careers.",
-          "points": -1 }
-      ]
+    {
+        "id": 7,
+        "question": "HOW’S YOUR WEIGHT?",
+        "img": "peek.jpg",
+        "animateIn": "animated bounceInLeft",
+        "animateOut": "animated bounceOutLeft",
+        "className": "weight",
+        "choices": [
+            {
+                "button": "I'm good",
+                "text": "Nice! Many studies have proven <a href='http://www.timothy-judge.com/Judge%20and%20Cable%20(JAP%202010).pdf'>a woman’s weight</a> has a significant effect on her earnings potential. The Journal of Applied Psychology reported in 2010 that even very thin women are punished when they gain a little.",
+                "points": 1
+            },
+            {
+                "button": "I could lose a few",
+                "text": "Uh oh. There’s a sad scientific correlation: When a woman’s BMI increases, <a href='https://files.nyu.edu/dc66/public/obesity_income_final.pdf'>her income decreases</a>. Her spouse’s does, too. The effect is most profound on younger women without established careers.",
+                "points": -1
+            }
+        ]
     },
-    { "id": 8,
-      "question": "￼DO YOU HAVE GOOD POSTURE?",
-      "img": "ezimba.gif",
-      "animateIn": "animated bounceInLeft",
-      "animateOut": "animated bounceOutLeft",
-      "className": "posture",
-      "choices": [
-        { "button": "Yes",
-          "text": "A Harvard Business School study says you’ll look more powerful.",
-          "points": 1 },
-        { "button": "No",
-          "text": "Stand up straight.",
-          "points": -1 }
-      ]
+    {
+        "id": 8,
+        "question": "DO YOU HAVE GOOD POSTURE?",
+        "img": "ezimba.gif",
+        "animateIn": "animated bounceInLeft",
+        "animateOut": "animated bounceOutLeft",
+        "className": "posture",
+        "choices": [
+            {
+                "button": "Yes",
+                "text": "A Harvard Business School study says you’ll <a href='https://research.hks.harvard.edu/publications/getFile.aspx?Id=306'>look more powerful</a>.",
+                "points": 1
+            },
+            {
+                "button": "No",
+                "text": "Stand up straight. A Harvard Business School study says it will make you <a href='https://research.hks.harvard.edu/publications/getFile.aspx?Id=306'>look more powerful</a>.",
+                "points": -1
+            }
+        ]
     }
-  ];
+];
   var slideCount = quiz.length+2;
 
   $("body").append(_.template($("#introTemplate").html()));
@@ -301,7 +350,7 @@ function loaded () {
     // show points and text
     // slide.find("button").removeClass("active");
     // button.addClass("active");
-    slide.find("p").text(button.data("text"));
+    slide.find("p").html(button.data("text"));
 
     // update point total
     // var answers = $(".choice.active");
@@ -336,8 +385,8 @@ function loaded () {
     // scroll to bottom of page (to reveal next question)
     setTimeout(function() {
       $('html, body').animate({
-         scrollTop: $(document).height()-$(window).height()},
-         500,
+         scrollTop: document.body.scrollHeight},
+         600,
          "swing"
       );      
     }, 1000)

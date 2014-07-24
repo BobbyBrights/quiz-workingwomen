@@ -423,6 +423,7 @@ button[data-points="1"] .points {
   display: block;
   height: auto;
   max-width: 200px;
+  z-index: 10;
 }
 
 .wife {
