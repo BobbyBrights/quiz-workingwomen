@@ -66,21 +66,61 @@ a {
   font-stretch: normal;
 }
 
-/* OTHER TEMPLATE */
-
-.hed {
-  font-family: BWHaasHead;
+/* DRUK! */
+/* Druk Medium */
+@font-face {
+  font-family: 'Druk Web';
+  src: url('Druk-Medium-Web.eot');
+  src: url('Druk-Medium-Web.eot?#iefix') format('embedded-opentype'),
+     url('Druk-Medium-Web.woff') format('woff'),
+     url('Druk-Medium-Web.ttf') format('truetype'),
+     url('Druk-Medium-Web.svg#Druk Web') format('svg');
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+/* Druk Wide Super */
+@font-face {
+  font-family: 'Druk Wide Web';
+  src: url('DrukWide-Super-Web.eot');
+  src: url('DrukWide-Super-Web.eot?#iefix') format('embedded-opentype'),
+     url('DrukWide-Super-Web.woff') format('woff'),
+     url('DrukWide-Super-Web.ttf') format('truetype'),
+     url('DrukWide-Super-Web.svg#Druk Wide Web') format('svg');
+  font-weight:  900;
+  font-style:   normal;
+  font-stretch: normal;
 }
 
-.dek {
-  font-family: BWHaasRegular;
+/* OTHER TEMPLATE */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  -ms-touch-action: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  color: #444444;
+  line-height: 1.231;
+  font-family: Georgia, serif;
+  font-size: 12px;
 }
 
 .data-credit {
   text-transform: uppercase;
   text-align: right;
   font-size: 10px;
-  font-family: Helvetica;
   margin-top: 50px;
 }
 
@@ -100,7 +140,6 @@ a {
 
 .clear {
   clear: both;
-  margin: 20px;
 }
 
 /* SVG */
@@ -147,12 +186,16 @@ body {
 }
 
 .slide {
-  font-family: BWHaasRegular;
   text-align: center;
   font-size: 13pt;
   position: relative;
-  /*text-shadow: #fff 1px 1px 0px;*/
   margin: 30px;
+  /*text-shadow: #fff 1px 1px 0px;*/
+  margin: 10px 10px 30px 10px;
+}
+
+.slide.question p {
+  margin-top: 0;
 }
 
 /* progressive reveal of quiz slides */
@@ -164,32 +207,46 @@ body {
   display:none;
 }
 
+a {
+  text-decoration: none;
+}
+
 h2 {
-  font-family: BWHaasHead;
   font-size: 16pt;
   color: black;
 }
 
 h2.question {
-  background: #000;
+  background: black;
   color: white;
   border-radius: 9px;
   border: 2px solid black;
   text-transform: uppercase;
   padding: 10px;
-  font-family: 'Arial Narrow';
-  font-weight: bold;
   text-shadow: none;
   display: inline;
+  font-size: 20pt;
+  font-family: 'Druk Web';
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
 }
 
 #title {
   margin: 0;
-  font-size: 20pt;
+  font-size: 48px;
+  text-transform: uppercase;
+  font-family: 'Druk Web';
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+#title strong {
+  font-family: 'Druk Wide Web';
 }
 
-.preview {
-  text-align: center;
+#title strong {
+  font-family: 'Druk Wide Web';
 }
 
 button {
@@ -198,8 +255,11 @@ button {
   border: 3px solid black;
   text-transform: uppercase;
   padding: 10px;
-  font-family: 'Arial Narrow';
-  font-weight: bold;
+  font-size: 20pt;
+  font-family: 'Druk Web';
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
 }
 
 button[data-points="-1"] {
@@ -226,6 +286,7 @@ button:hover {
 
 button.choice {
   position: relative;
+  margin: 10px;
 }
 
 button.choice .points {
@@ -233,10 +294,10 @@ button.choice .points {
   background: #ccc;
   position: absolute;
   top: -10px;
-  right: -5px;
+  right: -10px;
   padding: 5px;
-  border-radius: 10px;
-  border: 1px solid black;
+  border-radius: 15px;
+  border: 2px solid black;
 }
 
 .point-div {
@@ -421,9 +482,24 @@ button[data-points="1"] .points {
     width: 25%;
   }
 
+  h2.question{
+    display: block;
+  }
 }
 
 @media (min-width: 361px) {
   /* desktop view */
-
+  body {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  #title {
+    font-size: 72px;
+  }
+  .slide {
+    font-size: 20px;
+  }
+  button, h2.question {
+    font-size: 48px;
+  }
 }
