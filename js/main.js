@@ -34,13 +34,13 @@ function loaded () {
         "choices": [
             {
                 "button": "Yes",
-                "text": "Of course. According to a 2013 Gallup poll, 54% of Americans <a href='http://www.gallup.com/poll/165791/americans-prefer-male-boss.aspx'>have a male boss</a>, versus 30% with a female one. Actually, 35% of Americans would rather work for a man, while 40% have no preference either way.",
+                "text": "Of course. According to a 2013 Gallup poll, 54% of Americans <a target='_blank' href='http://www.gallup.com/poll/165791/americans-prefer-male-boss.aspx' target='_blank'>have a male boss</a>, versus 30% with a female one. Actually, 35% of Americans would rather work for a man, while 40% have no preference either way.",
                 "points": 1,
                 "next": 1
             },
             {
                 "button": "No",
-                "text": "Watch out. Female bosses might not help you get ahead. In 2012, MIT studied U.S. bank branches where half the managers were women. They were just as <a href='http://www.projecteve.com/research-says-women-in-leadership-dont-automatically-promote-women-company-wide/'>unlikely to promote underlings</a>.",
+                "text": "Watch out. Female bosses might not help you get ahead. In 2012, MIT studied U.S. bank branches where half the managers were women. They were just as <a target='_blank' href='http://www.projecteve.com/research-says-women-in-leadership-dont-automatically-promote-women-company-wide/'>unlikely to promote underlings</a>.",
                 "points": 1,
                 "next": 4
             }
@@ -78,12 +78,12 @@ function loaded () {
         "choices": [
             {
                 "button": "Yes",
-                "text": "Great! In a UNC Kenan Flagler Business School study, male managers married to working women were more likely to <a href='http://asq.sagepub.com/content/59/2/330.full.pdf+html'>recommend female candidates</a> over males for new positions.",
+                "text": "Great! In a UNC Kenan Flagler Business School study, male managers married to working women were more likely to <a target='_blank' href='http://asq.sagepub.com/content/59/2/330.full.pdf+html'>recommend female candidates</a> over males for new positions.",
                 "points": 1
             },
             {
                 "button": "No",
-                "text": "Bad news: A UNC Kenan Flagler Business School study showed married men with stay-at-home wives <a href='http://asq.sagepub.com/content/59/2/330.full.pdf+html'>viewed female colleagues unfavorably</a> and had a tendency to pass them over for promotions.",
+                "text": "Bad news: A UNC Kenan Flagler Business School study showed married men with stay-at-home wives <a target='_blank' href='http://asq.sagepub.com/content/59/2/330.full.pdf+html'>viewed female colleagues unfavorably</a> and had a tendency to pass them over for promotions.",
                 "points": -1
             },
             {
@@ -103,12 +103,12 @@ function loaded () {
         "choices": [
             {
                 "button": "Yes",
-                "text": "Excellent! If a male CEO has a first child who’s a girl, a female employee’s <a href='http://asq.sagepub.com/content/57/4/669.abstract'>wages will rise</a> by 1.1%. Male employees see a much smaller rise, according to a 2012 issue of Administrative Science Quarterly.",
+                "text": "Excellent! If a male CEO has a first child who’s a girl, a female employee’s <a target='_blank' href='http://asq.sagepub.com/content/57/4/669.abstract'>wages will rise</a> by 1.1%. Male employees see a much smaller rise, according to a 2012 issue of Administrative Science Quarterly.",
                 "points": 1
             },
             {
                 "button": "No",
-                "text": "Eek. When CEOs have a son, <a href='http://asq.sagepub.com/content/57/4/669.abstract'>all employees’ wages drop</a>, according to a 2012 issue of Administrative Science Quarterly. Fortunately, it’s less than half a percent.",
+                "text": "Eek. When CEOs have a son, <a target='_blank' href='http://asq.sagepub.com/content/57/4/669.abstract'>all employees’ wages drop</a>, according to a 2012 issue of Administrative Science Quarterly. Fortunately, it’s less than half a percent.",
                 "points": -1
             },
             {
@@ -128,12 +128,12 @@ function loaded () {
         "choices": [
             {
                 "button": "Yes",
-                "text": "University of Queensland researchers found <a href='http://faculty-course.insead.edu/popescu/UDJCore/XtraMaterial/Physical%20appearance%20and%20wages%20Do%20blondes%20have%20more%20fun.pdf'>blonds make 7% more</a>.",
+                "text": "University of Queensland researchers found <a target='_blank' href='http://faculty-course.insead.edu/popescu/UDJCore/XtraMaterial/Physical%20appearance%20and%20wages%20Do%20blondes%20have%20more%20fun.pdf'>blonds make 7% more</a>.",
                 "points": 1
             },
             {
                 "button": "No",
-                "text": "Could you be? University of Queensland researchers found <a href='http://faculty-course.insead.edu/popescu/UDJCore/XtraMaterial/Physical%20appearance%20and%20wages%20Do%20blondes%20have%20more%20fun.pdf'>blonds make 7% more</a>.",
+                "text": "Could you be? University of Queensland researchers found <a target='_blank' href='http://faculty-course.insead.edu/popescu/UDJCore/XtraMaterial/Physical%20appearance%20and%20wages%20Do%20blondes%20have%20more%20fun.pdf'>blonds make 7% more</a>.",
                 "points": -1
             }
         ]
@@ -148,12 +148,12 @@ function loaded () {
         "choices": [
             {
                 "button": "Yes",
-                "text": "Go for it. In 2012, Berkeley’s Haas School of Business found that <a href='http://newsroom.haas.berkeley.edu/research-news/study-finds-flirting-can-pay-women-negotiations'>women could flirt</a> their way into higher prices when selling cars to men. In 2009, former Sec. of State Madeline Albright told Bill Maher that she flirted with foreign dignitaries so they’d concur.",
+                "text": "Go for it. In 2012, Berkeley’s Haas School of Business found that <a target='_blank' href='http://newsroom.haas.berkeley.edu/research-news/study-finds-flirting-can-pay-women-negotiations'>women could flirt</a> their way into higher prices when selling cars to men. In 2009, former Sec. of State Madeline Albright told Bill Maher that she flirted with foreign dignitaries so they’d concur.",
                 "points": 1
             },
             {
                 "button": "No",
-                "text": "Safety first; flirting can backfire. A 2013 Academy of Management brief said that even though big law firms <a href='http://aom.org/News/Press-Releases/Masculine-work-environments-encourage-women-to-flirt-–-but-also-exact-a-stiff-price-for-it,-study-finds.aspx'>encouraged strategic flirtation</a>, the women who tried it were looked down upon, considered stupid, and mistreated.",
+                "text": "Safety first; flirting can backfire. A 2013 Academy of Management brief said that even though big law firms <a target='_blank' href='http://aom.org/News/Press-Releases/Masculine-work-environments-encourage-women-to-flirt-–-but-also-exact-a-stiff-price-for-it,-study-finds.aspx'>encouraged strategic flirtation</a>, the women who tried it were looked down upon, considered stupid, and mistreated.",
                 "points": 0
             }
         ]
@@ -168,12 +168,12 @@ function loaded () {
         "choices": [
             {
                 "button": "Yes",
-                "text": "Well done. According to Proctor & Gamble-funded psychology research conducted at Harvard U., people think women wearing makeup <a href='http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0025656'>look more competent</a> and professional than those who don’t.",
+                "text": "Well done. According to Proctor & Gamble-funded psychology research conducted at Harvard U., people think women wearing makeup <a target='_blank' href='http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0025656'>look more competent</a> and professional than those who don’t.",
                 "points": 1
             },
             {
                 "button": "No",
-                "text": "This may be ideal. In a study titled “<a href='http://www.ncbi.nlm.nih.gov/pubmed/21932332'>Intolerance of Sexy Peers</a>,” a McMaster U. researcher discovered women were put off by other women who looked too fancy. 85% preferred a thin blond woman in khakis over the same woman in a short skirt and tall boots.",
+                "text": "This may be ideal. In a study titled “<a target='_blank' href='http://www.ncbi.nlm.nih.gov/pubmed/21932332'>Intolerance of Sexy Peers</a>,” a McMaster U. researcher discovered women were put off by other women who looked too fancy. 85% preferred a thin blond woman in khakis over the same woman in a short skirt and tall boots.",
                 "points": -1
             }
         ]
@@ -188,12 +188,12 @@ function loaded () {
         "choices": [
             {
                 "button": "I'm good",
-                "text": "Nice! Many studies have proven <a href='http://www.timothy-judge.com/Judge%20and%20Cable%20(JAP%202010).pdf'>a woman’s weight</a> has a significant effect on her earnings potential. The Journal of Applied Psychology reported in 2010 that even very thin women are punished when they gain a little.",
+                "text": "Nice! Many studies have proven <a target='_blank' href='http://www.timothy-judge.com/Judge%20and%20Cable%20(JAP%202010).pdf'>a woman’s weight</a> has a significant effect on her earnings potential. The Journal of Applied Psychology reported in 2010 that even very thin women are punished when they gain a little.",
                 "points": 1
             },
             {
                 "button": "I could lose a few",
-                "text": "Uh oh. There’s a sad scientific correlation: When a woman’s BMI increases, <a href='https://files.nyu.edu/dc66/public/obesity_income_final.pdf'>her income decreases</a>. Her spouse’s does, too. The effect is most profound on younger women without established careers.",
+                "text": "Uh oh. There’s a sad scientific correlation: When a woman’s BMI increases, <a target='_blank' href='https://files.nyu.edu/dc66/public/obesity_income_final.pdf'>her income decreases</a>. Her spouse’s does, too. The effect is most profound on younger women without established careers.",
                 "points": -1
             }
         ]
@@ -208,12 +208,12 @@ function loaded () {
         "choices": [
             {
                 "button": "Yes",
-                "text": "A Harvard Business School study says you’ll <a href='https://research.hks.harvard.edu/publications/getFile.aspx?Id=306'>look more powerful</a>.",
+                "text": "A Harvard Business School study says you’ll <a target='_blank' href='https://research.hks.harvard.edu/publications/getFile.aspx?Id=306'>look more powerful</a>.",
                 "points": 1
             },
             {
                 "button": "No",
-                "text": "Stand up straight. A Harvard Business School study says it will make you <a href='https://research.hks.harvard.edu/publications/getFile.aspx?Id=306'>look more powerful</a>.",
+                "text": "Stand up straight. A Harvard Business School study says it will make you <a target='_blank' href='https://research.hks.harvard.edu/publications/getFile.aspx?Id=306'>look more powerful</a>.",
                 "points": -1
             }
         ]
