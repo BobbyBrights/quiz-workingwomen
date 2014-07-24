@@ -361,6 +361,23 @@ button[data-points="1"] .points {
   top: 100px;
 }
 
+.flirt {
+  left: 40%;
+}
+
+.blond {
+  left: 20%;
+  top: 150px;
+}
+
+.dress {
+  left: 60%;
+}
+
+.weight {
+  left: -35%;
+}
+
 
 @media (max-width: 480px) {
   /* mobile only */
