@@ -52,7 +52,7 @@ font-family:BWHaasRegular
   <script type="text/html" id="quizTemplate">
   <div class="slide question" data-slideindex="<%= q.id %>">
     <h2 class="question"><%= q.question %></h2>
-    <div class="img-container <%= q.className %>">
+    <div class="hide-img img-container <%= q.className %>">
       <img class="<%= q.animateIn %>" src="img/<%= q.img %>"></img>
     </div>
     <div class="clear" style="clear:both;margin:20px;"></div>
@@ -62,7 +62,7 @@ font-family:BWHaasRegular
         <div class="points"><%=choice.points%></div>
       </button>
     <% }); %>
-    <div class="point-div">+1</div>
+    <div class="zoomHuge point-div">+1</div>
     <p class="choice-text"></p>
   </div>
   </script>
@@ -82,6 +82,7 @@ font-family:BWHaasRegular
     <p id="point-total-text">Outro description text</p>
     <a id="story-link" href="#"><button>Call to action</button></a>
     <div class="data-credit">Sources???</div>
+    <img class="raptor" src="img/phone.jpg"></img>
   </div>
   </script>
 
@@ -184,7 +185,7 @@ function loaded () {
       "question": "DO YOU FLIRT AT WORK?",
       "img": "kiss.jpg",
       "animateIn": "animated zoomSmall",
-      "animateOut": "animated bounceOutLeft",
+      "animateOut": "animated fadeOut",
       "className": "flirt",
       "choices": [
         { "button": "Yes",
@@ -255,12 +256,14 @@ function loaded () {
 
   $("#start").click(function(e) {
     var button = $(e.target);
+
     $('.slide.question[data-slideindex="0"]').show();
-    var animateClass = quiz[0].animateOut
-    var img = button.parent().next().find('img')
-    img.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-      img.addClass(animateClass)
-    })
+    // $('.slide.question[data-slideindex="0"] .img-container').removeClass('hide-img');
+    // var animateClass = quiz[0].animateOut
+    // var img = button.parent().next().find('img')
+    // img.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    //   img.addClass(animateClass)
+    // })
   })
 
   $("button.choice").click(function(e) {
@@ -268,7 +271,8 @@ function loaded () {
     var slide = button.closest(".question");
 
     var pointDiv = button.parent().find('.point-div')
-    pointDiv.css('display', 'block')
+
+    pointDiv.css('display', 'block')    
 
     if(button.data('points') === 1) {
       pointDiv.text('+1')
@@ -311,20 +315,25 @@ function loaded () {
     var nextSlide = button.data("nextslide") ? button.data("nextslide") : slide.data("slideindex")+1;
     $('.slide[data-slideindex="'+nextSlide+'"]').show();
 
-    var animateClass = quiz[nextSlide].animateOut
-    var img = $('.slide[data-slideindex="'+nextSlide+'"] img')
-    img.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-      img.removeClass()
-      img.addClass(animateClass)
-    })
-
-
     // scroll to bottom of page (to reveal next question)
-    $('html, body').animate({
-       scrollTop: $(document).height()-$(window).height()},
-       500,
-       "swing"
-    );
+    setTimeout(function() {
+      $('html, body').animate({
+         scrollTop: $(document).height()-$(window).height()},
+         500,
+         "swing"
+      );      
+    }, 500)
+
+    setTimeout(function() {
+      var animateClass = quiz[nextSlide-1].animateOut
+      var imgContainer = $('.slide[data-slideindex="'+(nextSlide - 1)+'"] .img-container')
+      $(imgContainer).removeClass('hide-img')
+      var img = $('.slide[data-slideindex="'+(nextSlide-1)+'"] img')
+      img.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+        img.removeClass()
+        img.addClass(animateClass)
+      })
+    }, 1000)
 
   })
 

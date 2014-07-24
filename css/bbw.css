@@ -5,6 +5,7 @@ body {
   font-family: sans-serif;
   line-height: 1.231;
 	font-family: Helvetica, sans-serif;
+  padding-bottom: 2em;
 }
 
 body.dark_layout {
@@ -159,6 +160,7 @@ body {
   display:none;
 }
 #outro {
+  max-height: 300px;
   display:none;
 }
 
@@ -245,11 +247,11 @@ button.choice .points {
   margin-top: 1em;
   border-radius: 10px;
   background: #0f0;
-  -webkit-animation: fadein 1s; /* Safari and Chrome */
-     -moz-animation: fadein 1s; /* Firefox */
-      -ms-animation: fadein 1s; /* Internet Explorer */
-       -o-animation: fadein 1s; /* Opera */
-          animation: fadein 1s;
+  -webkit-animation: zoomHuge .5s; /* Safari and Chrome */
+     -moz-animation: zoomHuge .5s; /* Firefox */
+      -ms-animation: zoomHuge .5s; /* Internet Explorer */
+       -o-animation: zoomHuge .5s; /* Opera */
+          animation: zoomHuge .5s;
   -webkit-transition: background-color .5s linear;
      -moz-transition: background-color .5s linear;
        -o-transition: background-color .5s linear;
@@ -338,11 +340,16 @@ button[data-points="1"] .points {
 /*img styling*/
 
 .img-container {
+  display: block;
   position: relative;
   width: 0;
   height: 0;
   left: 10%;
   top: 60px;
+}
+
+.hide-img {
+  display: none !important;
 }
 
 .question img {
@@ -382,7 +389,21 @@ button[data-points="1"] .points {
 }
 
 .weight {
-  left: -35%;
+  left: -15%
+}
+
+.raptor {
+  position: relative;
+  left: 75%;
+  bottom: 500px;
+  max-height: 700px;
+  -webkit-animation: raptorCrawl 2s; /* Safari and Chrome */
+     -moz-animation: raptorCrawl 2s; /* Firefox */
+      -ms-animation: raptorCrawl 2s; /* Internet Explorer */
+       -o-animation: raptorCrawl 2s; /* Opera */
+          animation: raptorCrawl 2s;
+          -webkit-animation-delay: 2s; /* Safari and Chrome */
+          animation-delay: 2s;
 }
 
 
