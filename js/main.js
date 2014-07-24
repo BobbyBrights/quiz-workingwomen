@@ -234,6 +234,7 @@ function loaded () {
   $("#start").click(function(e) {
     var button = $(e.target);
 
+
     $('.slide.question[data-slideindex="0"]').show();
 
     $('html, body').animate({
@@ -335,11 +336,20 @@ function loaded () {
     // scroll to bottom of page (to reveal next question)
     // setTimeout(function() {
       if($('#outro').css('display') === "none"){
-        $('html, body').animate({
-           scrollTop: document.body.scrollHeight},
-           600,
-           "swing"
-        );      
+        if(window.innerHeight < 500) {
+          setTimeout(function() {
+            $('html, body').animate({
+               scrollTop: document.body.scrollHeight},
+               "swing"
+            );      
+
+          }, 1000)          
+        } else {
+          $('html, body').animate({
+             scrollTop: document.body.scrollHeight},
+             "swing"
+          );  
+        }
       }
     // }, 1000)
 
