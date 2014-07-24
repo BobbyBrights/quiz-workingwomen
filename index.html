@@ -23,6 +23,7 @@
   <link href="apple-touch-icon-precomposed.png" rel="apple-touch-icon" type="image/png" />
   <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/more-animations.css">
+  <link rel="stylesheet" href="css/waves.css">
 
 
   <link rel="stylesheet" href="css/normalize.css">
@@ -44,6 +45,8 @@ font-family:DrukWideSuper
 
 <body onload="loaded()">
 
+
+
   <script type="text/html" id="quizTemplate">
   <div class="slide question" data-slideindex="<%= q.id %>">
     <h2 class="question"><%= q.question %></h2>
@@ -53,7 +56,7 @@ font-family:DrukWideSuper
     <div class="clear" style="clear:both;margin:20px;"></div>
     <div class="choices">
     <% _.each(q.choices, function(choice) { %>
-      <button class="choice" data-points="<%= choice.points %>" data-text="<%= choice.text %>" data-nextslide="<%= choice.next %>">
+      <button class="waves-effect waves-button waves-light waves-float choice" data-points="<%= choice.points %>" data-text="<%= choice.text %>" data-nextslide="<%= choice.next %>">
         <%= choice.button %>
         <div class="points"><%=choice.points%></div>
       </button>
@@ -70,12 +73,12 @@ font-family:DrukWideSuper
     <a href="http://businessweek.com/" title="Bloomberg Businessweek"><img src="apple-touch-icon-precomposed.png" width="50"></a>
     <h2 id="title">Can a woman<br><strong>ever</strong><br>win at work?</h2>
     <p id="description">It’s hard enough for a working woman, and now a new study from UNC’s Kenan Flager School of Business found many struggles over promotion and raises may be out of a gal’s control. Take this easy quiz to determine just how screwed you might be, culled from the endless academic research on office gender dynamics.</p>
-    <button id="start">Start</button>
+    <button class="waves-effect waves-button waves-light waves-float" id="start">Start</button>
   </div>
   </script>
 
   <script type="text/html" id="outroTemplate">
-  <div class="slide" id="outro">
+  <div class="slide animated bounceInLeft" id="outro">
     <h2><span id="point-total">0</span> points</h2>
     <p id="point-total-text">Outro description text</p>
     <a id="story-link" href="#"><button>Call to action</button></a>
@@ -85,6 +88,10 @@ font-family:DrukWideSuper
 
   <script src="js/vendor/jquery-1.10.2.min.js"></script>
   <script src="js/vendor/underscore-min.js"></script>
+  <script src="js/vendor/waves.js"></script>
+  <script type="text/javascript">
+    Waves.displayEffect();
+  </script>
   <script src="js/main.js"></script>
 
 <script>
@@ -274,19 +281,20 @@ function loaded () {
 
     var pointDiv = button.parent().find('.point-div')
 
+
     pointDiv.css('display', 'block')    
 
     if(button.data('points') === 1) {
       pointDiv.text('+1')
-      pointDiv.css('background', '#0f0')
+      pointDiv.css('color', '#0f0')
       pointDiv.data('points', 1)
     } else if (button.data('points') === -1) {
       pointDiv.text('-1')
-      pointDiv.css('background', 'red')
+      pointDiv.css('color', 'red')
       pointDiv.data('points', -1)
     } else {
       pointDiv.text('+0')
-      pointDiv.css('background', 'lightgrey')
+      pointDiv.css('color', 'black')
       pointDiv.data('points', 0)
     }
 
@@ -315,7 +323,15 @@ function loaded () {
 
     // progressive reveal (show next slide)
     var nextSlide = button.data("nextslide") ? button.data("nextslide") : slide.data("slideindex")+1;
-    $('.slide[data-slideindex="'+nextSlide+'"]').show();
+
+    if(nextSlide === 9) {
+
+      setTimeout(function() {
+        $('.slide[data-slideindex="'+nextSlide+'"]').show();     
+      }, 1500)
+    } else {
+      $('.slide[data-slideindex="'+nextSlide+'"]').show();
+    }
 
     // scroll to bottom of page (to reveal next question)
     setTimeout(function() {

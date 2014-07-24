@@ -3178,7 +3178,7 @@ Copyright (c) 2014 Daniel Eden
 
   50% {
     opacity: 1;
-    -webkit-transform: scale3d(20, 20, 20)
+    -webkit-transform: scale3d(20, 20, 20) 
     translate3d(0, 60px, 0);
     transform: scale3d(20, 20, 20) translate3d(0, 60px, 0);;
   }
