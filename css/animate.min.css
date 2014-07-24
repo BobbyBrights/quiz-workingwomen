@@ -3227,10 +3227,6 @@ Copyright (c) 2014 Daniel Eden
 }
 
 @-webkit-keyframes pulseText{
-  0% {
-    opacity: .5;
-    font-size: 20px;
-  }
 
   50% {
     opacity: 1;
@@ -3239,10 +3235,6 @@ Copyright (c) 2014 Daniel Eden
 }
 
 @keyframe pulseText{
-  0% {
-    opacity: .5;
-    font-size: 20px;
-  }
 
   50% {
     opacity: 1;

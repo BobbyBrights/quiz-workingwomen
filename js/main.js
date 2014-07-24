@@ -23,7 +23,7 @@ function loaded () {
     {
         "id": 0,
         "question": "IS YOUR BOSS A MAN?",
-        "img": "ezimba.gif",
+        "img": "boss.png",
         "animateIn": "animated bounceInLeft",
         "animateOut": "animated bounceOutLeft",
         "className": "boss",
@@ -45,7 +45,7 @@ function loaded () {
     {
         "id": 1,
         "question": "DOES HE HAVE A WIFE?",
-        "img": "rings.jpg",
+        "img": "rings.png",
         "animateIn": "animated tada",
         "animateOut": "animated bounceOutRight",
         "className": "wife",
@@ -67,7 +67,7 @@ function loaded () {
     {
         "id": 2,
         "question": "DOES HIS WIFE WORK?",
-        "img": "notebook.jpg",
+        "img": "notebook.png",
         "animateIn": "animated bounceInLeft",
         "animateOut": "animated bounceOutLeft",
         "className": "wife-work",
@@ -92,7 +92,7 @@ function loaded () {
     {
         "id": 3,
         "question": "DOES HE HAVE A DAUGHTER?",
-        "img": "daughter.jpg",
+        "img": "daughter.png",
         "animateIn": "slideDown",
         "animateOut": "animated bounceOutUp",
         "className": "daughter",
@@ -117,7 +117,7 @@ function loaded () {
     {
         "id": 4,
         "question": "ARE YOU BLOND?",
-        "img": "blond.jpg",
+        "img": "blond.png",
         "animateIn": "animated rollIn",
         "animateOut": "animated rollOut",
         "className": "blond",
@@ -137,7 +137,7 @@ function loaded () {
     {
         "id": 5,
         "question": "DO YOU FLIRT AT WORK?",
-        "img": "kiss.jpg",
+        "img": "kiss.png",
         "animateIn": "animated zoomSmall",
         "animateOut": "animated fadeOut",
         "className": "flirt",
@@ -157,7 +157,7 @@ function loaded () {
     {
         "id": 6,
         "question": "DO YOU DRESS UP FOR WORK?",
-        "img": "shoes.jpg",
+        "img": "shoe.png",
         "animateIn": "animated swing",
         "animateOut": "animated zoomOutRight",
         "className": "dress",
@@ -177,7 +177,7 @@ function loaded () {
     {
         "id": 7,
         "question": "HOW’S YOUR WEIGHT?",
-        "img": "peek.jpg",
+        "img": "peek.png",
         "animateIn": "animated bounceInLeft",
         "animateOut": "animated bounceOutLeft",
         "className": "weight",
@@ -197,7 +197,7 @@ function loaded () {
     {
         "id": 8,
         "question": "DO YOU HAVE GOOD POSTURE?",
-        "img": "ezimba.gif",
+        "img": "boss.png",
         "animateIn": "animated bounceInLeft",
         "animateOut": "animated bounceOutLeft",
         "className": "posture",
