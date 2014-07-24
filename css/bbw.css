@@ -487,6 +487,7 @@ button[data-points="1"] .points {
   h2.question{
     display: block;
   }
+
 }
 
 @media (min-width: 361px) {
@@ -504,6 +505,13 @@ button[data-points="1"] .points {
   button, h2.question {
     font-size: 48px;
   }
+}
+
+@media (max-width: 360px) {
+    #title {
+    line-height: 50px;
+  }
+
 }
 
 
