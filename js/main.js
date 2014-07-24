@@ -94,7 +94,7 @@ function loaded () {
         "question": "DOES HE HAVE A DAUGHTER?",
         "img": "daughter.jpg",
         "animateIn": "slideDown",
-        "animateOut": "animated bounceOutDown",
+        "animateOut": "animated bounceOutUp",
         "className": "daughter",
         "choices": [
             {
@@ -318,13 +318,19 @@ function loaded () {
         
           return false;
         });      
+
+        $('html, body').animate({
+           scrollTop: document.body.scrollHeight},
+           600,
+           "swing"
+        );
       }, 1500)
     } else {
       $('.slide[data-slideindex="'+nextSlide+'"]').show();
     }
 
     // scroll to bottom of page (to reveal next question)
-    setTimeout(function() {
+    // setTimeout(function() {
       if($('#outro').css('display') === "none"){
         $('html, body').animate({
            scrollTop: document.body.scrollHeight},
@@ -332,7 +338,7 @@ function loaded () {
            "swing"
         );      
       }
-    }, 1000)
+    // }, 1000)
 
     var thisSlide = button.parent().parent().data('slideindex')
 
