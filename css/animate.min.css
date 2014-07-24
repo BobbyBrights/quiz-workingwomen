@@ -3123,3 +3123,37 @@ Copyright (c) 2014 Daniel Eden
   -webkit-animation-name: zoomOutUp;
   animation-name: zoomOutUp;
 }
+
+
+
+
+.zoomSmall {
+  -webkit-animation-name: zoomSmall;
+  animation-name: zoomSmall;
+}
+
+
+@-webkit-keyframes zoomSmall {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(3, 3, 3);
+    transform: scale3d(3, 3, 3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomSmall {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(3, 3, 3);
+    -ms-transform: scale3d(3, 3, 3);
+    transform: scale3d(3, 3, 3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

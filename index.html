@@ -168,8 +168,8 @@ function loaded () {
     { "id": 4,
       "question": "ARE YOU BLOND?",
       "img": "blond.jpg",
-      "animateIn": "animated bounceInLeft",
-      "animateOut": "animated bounceOutLeft",
+      "animateIn": "animated rollIn",
+      "animateOut": "animated rollOut",
       "className": "blond",
       "choices": [
         { "button": "Yes",
@@ -182,8 +182,8 @@ function loaded () {
     },
     { "id": 5,
       "question": "DO YOU FLIRT AT WORK?",
-      "img": "ezimba.gif",
-      "animateIn": "animated bounceInLeft",
+      "img": "kiss.jpg",
+      "animateIn": "animated zoomSmall",
       "animateOut": "animated bounceOutLeft",
       "className": "flirt",
       "choices": [
@@ -197,9 +197,9 @@ function loaded () {
     },
     { "id": 6,
       "question": "DO YOU DRESS UP FOR WORK?",
-      "img": "ezimba.gif",
-      "animateIn": "animated bounceInLeft",
-      "animateOut": "animated bounceOutLeft",
+      "img": "shoes.jpg",
+      "animateIn": "animated zoomInRight",
+      "animateOut": "animated zoomOutRight",
       "className": "dress",
       "choices": [
         { "button": "Yes",
@@ -212,7 +212,7 @@ function loaded () {
     },
     { "id": 7,
       "question": "HOW’S YOUR WEIGHT?",
-      "img": "ezimba.gif",
+      "img": "peek.jpg",
       "animateIn": "animated bounceInLeft",
       "animateOut": "animated bounceOutLeft",
       "className": "weight",
@@ -314,6 +314,7 @@ function loaded () {
     var animateClass = quiz[nextSlide].animateOut
     var img = $('.slide[data-slideindex="'+nextSlide+'"] img')
     img.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+      img.removeClass()
       img.addClass(animateClass)
     })
 
