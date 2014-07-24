@@ -35,6 +35,10 @@
   zoom: 1;
 }
 
+.nav-collapse br {
+  display: none;
+}
+
 .nav-collapse.opened {
   max-height: 9999px;
 }

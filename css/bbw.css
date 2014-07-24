@@ -258,6 +258,10 @@ h2.question {
   font-family: 'Druk Wide Web';
 }
 
+#byline {
+  margin-top: -.1em;
+}
+
 button {
   background: #ddd;
   border-radius: 10px;

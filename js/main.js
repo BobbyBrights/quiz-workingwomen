@@ -238,7 +238,7 @@ function loaded () {
 
     $('html, body').animate({
        scrollTop: $(document).height()-$(window).height()},
-       500,
+       750,
        "swing"
     );  
     // $('.slide.question[data-slideindex="0"] .img-container').removeClass('hide-img');
@@ -303,8 +303,7 @@ function loaded () {
         $('.slide[data-slideindex="'+nextSlide+'"]').show(); 
         $('.popup').click(function(event) {
           event.preventDefault()
-          var points = $('#point-total').text()
-          var textString = "I scored " + points + " something something something"
+          var textString = "I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too."
           var text = textString.split(' ').join('%20')
           var width  = 575,
               height = 400,
