@@ -15,6 +15,10 @@ $(document).ready(function() {
   
     return false;
   });  
+
+  // if(window.innerWidth < 895) {
+  //   $('#bloomberg').attr('src', 'img/bloomberg-single.png')
+  // }
 })
 
 function loaded () {

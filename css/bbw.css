@@ -185,6 +185,14 @@ body {
   background: transparent;
 }
 
+#bloomberg {
+  display: block;
+  max-height: 5%;
+  max-width: 80%;
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
+
 .slide {
   text-align: center;
   font-size: 13pt;
