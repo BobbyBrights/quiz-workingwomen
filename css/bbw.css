@@ -185,8 +185,29 @@ body {
   background: transparent;
 }
 
+.header {
+  padding-right: 7em;
+}
+
+#header-social {
+  display: inline-block;
+  float: right;
+
+}
+
+.social{
+  display: inline-block;
+  vertical-align: top;
+  height: 50px;
+  margin-top: 1.5em;
+}
+
+.header a {
+  display: inline-block;
+}
+
 #bloomberg {
-  display: block;
+  display: inline-block;
   max-height: 5%;
   max-width: 80%;
   margin-bottom: 2em;
@@ -495,6 +516,12 @@ button[data-points="1"] .points {
 
 #story-link {
   color: black;
+}
+
+@media (max-width: 895px) {
+  #header-social {
+    display: none;
+  }
 }
 
 

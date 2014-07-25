@@ -23,7 +23,14 @@
   width: 9%;
   display: inline-block;
   vertical-align: top
+}
 
+#social-tab {
+  height: 50px;
+  display: none;
+}
+.social-nav {
+  height: 35px
 }
 
 .js .nav-collapse {
@@ -58,6 +65,7 @@
 }
 
 @media screen and (min-width: 895px) {
+
   .js .nav-collapse {
     position: relative;
   }
@@ -98,6 +106,7 @@
   top: 1%;
   left: -5%;
 }
+
 
 #global {
   background: #0072bc;
@@ -141,8 +150,20 @@
 }
 
 @media (max-width: 895px) {
+
+  #social-tab {
+    display: block;
+  }
+
+  #header-social {
+    display: none;
+  }
+
+
   .nav-collapse li {
     display: block;
     width: 100%;
+    height: auto;
+    padding: 10px;
   }
 }
