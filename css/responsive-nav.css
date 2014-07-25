@@ -67,6 +67,10 @@
 
 @media screen and (min-width: 895px) {
 
+  .ad-div {
+    display: none;
+  }
+
   .js .nav-collapse {
     position: relative;
   }

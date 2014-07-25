@@ -185,6 +185,21 @@ body {
   background: transparent;
 }
 
+.gpt_ad_container {
+  margin: 0 auto;
+}
+
+.ad-div {
+  margin: 0 auto;
+}
+
+
+#top {
+  width: 50%;
+}
+
+
+
 .header {
   padding-right: 7em;
 }
@@ -522,6 +537,11 @@ button[data-points="1"] .points {
   #header-social {
     display: none;
   }
+
+    .ad-div {
+    display: none;
+  }
+
 }
 
 
