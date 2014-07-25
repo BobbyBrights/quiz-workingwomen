@@ -26,11 +26,12 @@
 }
 
 #social-tab {
-  height: 50px;
+  height: 55px;
   display: none;
 }
 .social-nav {
-  height: 35px
+  height: 45px;
+  margin-right: 2em;
 }
 
 .js .nav-collapse {
