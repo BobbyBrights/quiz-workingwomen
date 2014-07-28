@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('.popup-twitter').click(function(event) {
     event.preventDefault()
     var textString = "I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too."
-    var text = textString.split(' ').join('%20')
+    var text = encodeURIComponent(textString)
     var width  = 575,
         height = 400,
         left   = ($(window).width()  - width)  / 2,
@@ -22,13 +22,36 @@ $(document).ready(function() {
   $('.popup-linkedin').click(function(event) {
     event.preventDefault()
     var textString = "I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too."
-    var text = textString.split(' ').join('+')
+    var text = encodeURIComponent(textString)
     var width  = 550,
         height = 420,
         left   = ($(window).width()  - width)  / 2,
         top    = ($(window).height() - height) / 2,
-        articleUrl = "businessweek.com",
-        url    = $(this).attr('href') + text,
+        articleUrl = encodeURIComponent("http://businessweek.com"),
+        url    = $(this).attr('href') + articleUrl + "&summary=" + text, 
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+
+                 console.log(url)
+
+    window.open(url, 'twitter', opts);
+    
+    return false;
+  });  
+
+    $('.popup-facebook').click(function(event) {
+    event.preventDefault()
+    var textString = "I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too."
+    var text = encodeURIComponent(textString)
+    var width  = 550,
+        height = 420,
+        left   = ($(window).width()  - width)  / 2,
+        top    = ($(window).height() - height) / 2,
+        articleUrl = encodeURIComponent(document.URL),
+        url    = $(this).attr('href') + articleUrl
         opts   = 'status=1' +
                  ',width='  + width  +
                  ',height=' + height +
@@ -38,7 +61,9 @@ $(document).ready(function() {
     window.open(url, 'twitter', opts);
     
     return false;
-  });    
+  });   
+
+  // https://www.facebook.com/sharer/sharer.php?u=http://example.com?share=1&cup=blue&bowl=red&spoon=green
 
   // http://www.linkedin.com/shareArticle?mini=true&url={articleUrl}&title={articleTitle}&summary={articleSummary}&source={articleSource}
   // http://www.linkedin.com/shareArticle?mini=true&url=http%3A//developer.linkedin.com&title=LinkedIn%20Developer%20Network&summary=My%20favorite%20developer%20program&source=LinkedIn
