@@ -7,7 +7,7 @@ $(document).ready(function() {
         height = 400,
         left   = ($(window).width()  - width)  / 2,
         top    = ($(window).height() - height) / 2,
-        url    = $(this).attr('href') + text,
+        url    = $(this).attr('href') + text + "&url" + document.URL,
         opts   = 'status=1' +
                  ',width='  + width  +
                  ',height=' + height +
