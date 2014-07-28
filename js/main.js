@@ -1,20 +1,47 @@
 $(document).ready(function() {
-  $('.popup').click(function(event) {
+  $('.popup-twitter').click(function(event) {
+    event.preventDefault()
+    var textString = "I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too."
+    var text = textString.split(' ').join('%20')
     var width  = 575,
         height = 400,
         left   = ($(window).width()  - width)  / 2,
         top    = ($(window).height() - height) / 2,
-        url    = this.href,
+        url    = $(this).attr('href') + text,
         opts   = 'status=1' +
                  ',width='  + width  +
                  ',height=' + height +
                  ',top='    + top    +
                  ',left='   + left;
-    
+
     window.open(url, 'twitter', opts);
-  
+    
     return false;
-  });  
+  });
+
+  $('.popup-linkedin').click(function(event) {
+    event.preventDefault()
+    var textString = "I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too."
+    var text = textString.split(' ').join('+')
+    var width  = 550,
+        height = 420,
+        left   = ($(window).width()  - width)  / 2,
+        top    = ($(window).height() - height) / 2,
+        articleUrl = "businessweek.com",
+        url    = $(this).attr('href') + text,
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+
+    window.open(url, 'twitter', opts);
+    
+    return false;
+  });    
+
+  // http://www.linkedin.com/shareArticle?mini=true&url={articleUrl}&title={articleTitle}&summary={articleSummary}&source={articleSource}
+  // http://www.linkedin.com/shareArticle?mini=true&url=http%3A//developer.linkedin.com&title=LinkedIn%20Developer%20Network&summary=My%20favorite%20developer%20program&source=LinkedIn
 
   // if(window.innerWidth < 895) {
   //   $('#bloomberg').attr('src', 'img/bloomberg-single.png')
@@ -316,6 +343,8 @@ function loaded () {
                        ',height=' + height +
                        ',top='    + top    +
                        ',left='   + left;
+
+
 
 
           window.open(url, 'twitter', opts);

@@ -185,11 +185,13 @@ body {
   background: transparent;
 }
 
-.gpt_ad_container {
-  margin: 0 auto;
+
+.gpt_ads_slot {
+  /*margin: 0 auto;*/
 }
 
 .ad-div {
+  width: 728px;
   margin: 0 auto;
 }
 
@@ -201,7 +203,7 @@ body {
 
 
 .header {
-  padding-right: 7em;
+  padding-right: 3em;
 }
 
 #header-social {
@@ -224,10 +226,10 @@ body {
 #bloomberg {
   display: inline-block;
   max-height: 5%;
-  max-width: 80%;
+  max-width: 70%;
   margin-bottom: 2em;
   margin-top: 1em;
-  margin-left: 1em;
+  margin-left: 3em;
 }
 
 .slide {

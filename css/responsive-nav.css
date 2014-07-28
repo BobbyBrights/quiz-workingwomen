@@ -11,18 +11,24 @@
   font-style: normal;
 }
 
+.nav-collapse {
+  margin: 0 auto;
+}
+
 .nav-collapse ul {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   width: 100%;
   display: block;
   list-style: none;
+  text-align: center;
 }
 
 .nav-collapse li {
   width: 9%;
   display: inline-block;
-  vertical-align: top
+  vertical-align: top;
+  text-align: left;
 }
 
 #social-tab {
@@ -67,9 +73,6 @@
 
 @media screen and (min-width: 895px) {
 
-  .ad-div {
-    display: none;
-  }
 
   .js .nav-collapse {
     position: relative;

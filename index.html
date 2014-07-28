@@ -13,11 +13,16 @@
   <meta name="twitter:card" content="photo">
   <meta name="twitter:site" content="bizweekgraphics">
   <meta name="twitter:creator" content="tophtucker">
-  <meta name="twitter:title" content="Can a woman ever win at work?">
+  <meta name="twitter:title" content="Can a Woman Ever Win at Work?">
+  <meta name="twitter:description" content="I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too." />
+
   <!--<meta name="twitter:image" content="http://">
   <meta name="twitter:image:width" content="100">
   <meta name="twitter:image:height" content="100">-->
   <meta name="twitter:domain" content="http://bizweekgraphics.com/">
+
+  <meta property="og:title" content="Can a Woman Ever Win at Work?" />
+  <meta property="og:description" content="I just took Businessweek's Can Women Ever Get Ahead at Work quiz, and you should too." />
 
   <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
   <link href="apple-touch-icon-precomposed.png" rel="apple-touch-icon" type="image/png" />
@@ -46,6 +51,7 @@ font-family:DrukWideSuper
 -->
 
 <body onload="loaded()">
+<div class="body-wrapper">
 
 <div class='ad-div banner_ad non_blank_ad' id='leader_board'>
   <div class='gpt_ads_slot' id='top'>
@@ -58,9 +64,9 @@ font-family:DrukWideSuper
 <div class="header">
   <a href="http://www.businessweek.com"><img id="bloomberg" src="img/bloomberg.png"></a>
   <div id="header-social">
-    <img class="social" src="img/facebook.png">
-    <img class="social" src="img/twitter.png">
-    <img class="social" src="img/linkedin.png">
+    <img class="popup-facebook social" src="img/facebook.png">
+    <img class="popup-twitter social" href="http://twitter.com/share?text=" src="img/twitter.png">
+    <img class="popup-linkedin social" href="http://www.linkedin.com/shareArticle?summary=" src="img/linkedin.png">
   </div>
 </div>
 <nav class="nav-collapse">
@@ -120,11 +126,6 @@ font-family:DrukWideSuper
     <a class="twitter popup" id="story-link" href="http://twitter.com/share?text="><button class="waves-effect waves-button waves-light waves-float">Tweet</button></a>
   </div>
 
-  <div class='rectangle ad_module non_blank_ad'>
-    <div class='gpt_ads_slot' id='right1'>
-      <div class='gpt_ad_container' data-gpt-size='[[300, 250], [300, 600], [1, 1]]' data-original-position='right1' data-position='right1' data-pt='t11' data-size='300x250,300x600,1x1' data-tile='2' data-tz='right1'></div>
-    </div>
-  </div>
   </script>
 
   <script src="js/vendor/jquery-1.10.2.min.js"></script>
@@ -172,6 +173,8 @@ font-family:DrukWideSuper
 </script>
 
   <script src="js/vendor/krux.js" type="text/javascript"></script>
+  <script src="js/vendor/quiz.js" type="text/javascript"></script>
+
 
 
   <script type="text/javascript">
@@ -284,6 +287,49 @@ $iframe.parentNode.setAttribute('style', 'height:' + $iframe.getAttribute('heigh
     // == End of Google Publisher Tags ===============================
   </script>
 
+  <!-- BEGIN COMSCORE -->
+  <script>
+    BBBW_comScore.params = {"bb_groupid":"","bb_c_type":"___[www story for standard article or story for Magazine content]____","bb_attributor":"","bb_pub_d":"____[PUBDATE]____","bb_cg_1":"____[CHANNEL]____","bb_cg_2":"","bb_cg_3":"____[HEADLINE]____","bb_author":"____[AUTHOR]____","content_goognews":"0"};
+    if (_BUCKET != "" && _BUCKET_GROUP != ""){
+      BBBW_comScore.params['bb_bucket']       = _BUCKET;
+      BBBW_comScore.params['bb_bucket_group'] = _BUCKET_GROUP;
+    }
+    BBBW_comScore.track();
+    BBBW_comScore.write_cookie(comScore_track_key,"",-1);
+  </script>
+  <noscript>
+  <p>
+  <img alt='*' height='1' src='http://b.scorecardresearch.com/p?c1=2&amp;amp;c2=3005059' width='1'>
+  </p>
+  </noscript>
+
+
+
+</div>
+
+<!-- Chartbeat Monitoring -->
+<script>
+  var _sf_async_config= {uid: 15087, domain: "www.businessweek.com"};
+  _sf_async_config.useCanonical = true;
+  
+  _sf_async_config.sections = "____[CHANNEL]_____";
+  _sf_async_config.authors = "_____[AUTHOR]_____";
+  
+  
+  (function(){
+    function loadChartbeat() {
+      window._sf_endpt=(new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src',
+        (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://") + "static.chartbeat.com/js/chartbeat_pub.js");
+      document.body.appendChild(e);
+    }
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
+</script>
 
 </body>
 </html>
