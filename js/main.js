@@ -28,7 +28,8 @@ $(document).ready(function() {
         left   = ($(window).width()  - width)  / 2,
         top    = ($(window).height() - height) / 2,
         articleUrl = encodeURIComponent("http://businessweek.com"),
-        url    = $(this).attr('href') + articleUrl + "&summary=" + text, 
+        // url    = $(this).attr('href') + text + "&url=" + articleUrl
+        url = "https://www.linkedin.com/shareArticle?summary=I+just+took+Businessweek%27s+Can+Women+Ever+Get+Ahead+at+Work+quiz%2C+and+you+should+too%2E&title=Can+a+Woman+Ever+Win+at+Work%3F&mini=true&url=" + encodeURIComponent(document.URL)
         opts   = 'status=1' +
                  ',width='  + width  +
                  ',height=' + height +
@@ -37,7 +38,7 @@ $(document).ready(function() {
 
                  console.log(url)
 
-    window.open(url, 'twitter', opts);
+    window.open(url, 'linkedin', opts);
     
     return false;
   });  
@@ -58,7 +59,9 @@ $(document).ready(function() {
                  ',top='    + top    +
                  ',left='   + left;
 
-    window.open(url, 'twitter', opts);
+        console.log(url)
+
+    window.open(url, 'facebook', opts);
     
     return false;
   });   
