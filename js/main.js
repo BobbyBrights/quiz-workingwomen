@@ -1,4 +1,16 @@
 $(document).ready(function() {
+  Waves.displayEffect();
+
+
+  //chartbeat code
+
+  var module = new bloomberg.common.analytics.chartbeat.View({
+    domain: "PLACEHOLDER",
+    uid: 1337
+  });
+
+  $('body').append(module.render().el)
+
   $('.popup-twitter').click(function(event) {
     event.preventDefault()
     var textString = "I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too."
@@ -421,6 +433,7 @@ function loaded () {
         } else {
           $('html, body').animate({
              scrollTop: document.body.scrollHeight},
+             800,
              "swing"
           );  
         }
