@@ -492,12 +492,16 @@ button[data-points="1"] .points {
 }
 
 .wife-work {
-  top: 100px;
+  top: 150px;
 }
 
 .daughter {
-  top: 100px;
-  left: 65%;
+  top: 150px;
+  left: 75%;
+}
+
+.daughter img {
+  height: 200px;
 }
 
 .flirt {
@@ -514,7 +518,8 @@ button[data-points="1"] .points {
 }
 
 .weight {
-  left: -25%
+  top: 200px;
+  left: -5%
 }
 
 .raptor {

@@ -5,9 +5,11 @@ $(document).ready(function() {
   //chartbeat code
 
   var module = new bloomberg.common.analytics.chartbeat.View({
-    domain: "PLACEHOLDER",
-    uid: 1337
+    domain: "www.businessweek.com",
+    uid: 15087
   });
+
+
 
   $('body').append(module.render().el)
 
