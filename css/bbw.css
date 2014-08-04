@@ -225,7 +225,7 @@ body {
 
 #bloomberg {
   display: inline-block;
-  max-height: 5%;
+  max-height: 100px;
   max-width: 70%;
   margin-bottom: 2em;
   margin-top: 1em;
