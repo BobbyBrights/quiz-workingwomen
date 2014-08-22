@@ -232,7 +232,7 @@ function loaded () {
     },
     {
         "id": 4,
-        "question": "ARE YOU BLOND?",
+        "question": "ARE YOU BLONDE?",
         "img": "blond.png",
         "animateIn": "animated rollIn",
         "animateOut": "animated rollOut",
@@ -240,7 +240,7 @@ function loaded () {
         "choices": [
             {
                 "button": "Yes",
-                "text": "University of Queensland researchers found <a target='_blank' href='http://faculty-course.insead.edu/popescu/UDJCore/XtraMaterial/Physical%20appearance%20and%20wages%20Do%20blondes%20have%20more%20fun.pdf'>blonds make 7% more</a>.",
+                "text": "University of Queensland researchers found <a target='_blank' href='http://faculty-course.insead.edu/popescu/UDJCore/XtraMaterial/Physical%20appearance%20and%20wages%20Do%20blondes%20have%20more%20fun.pdf'>blondes make 7% more</a>.",
                 "points": 1
             },
             {
@@ -345,6 +345,10 @@ function loaded () {
 
   $("#start").click(function(e) {
     var button = $(e.target);
+
+    ga('send', 'event', 'start-button', 'click')
+    ga('send', 'event', 'button', 'click', 'nav-buttons');
+
 
 
     $('.slide.question[data-slideindex="0"]').show();
@@ -479,6 +483,7 @@ function loaded () {
         img.removeClass()
         img.addClass(animateClass)
       })
+
 
   })
 

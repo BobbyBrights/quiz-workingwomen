@@ -193,6 +193,7 @@ body {
 .ad-div {
   width: 728px;
   margin: 0 auto;
+  margin-top: 10px;
 }
 
 
@@ -209,7 +210,7 @@ body {
 #header-social {
   display: inline-block;
   float: right;
-
+  cursor: pointer;
 }
 
 .social{
@@ -225,7 +226,7 @@ body {
 
 #bloomberg {
   display: inline-block;
-  max-height: 100px;
+  max-height: 80px;
   max-width: 70%;
   margin-bottom: 2em;
   margin-top: 1em;
