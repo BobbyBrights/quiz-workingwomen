@@ -7,7 +7,7 @@ require 'webrick'
 include WEBrick
 
 dir = Dir::pwd
-port = 9000
+port = 8000
 
 
 s = HTTPServer.new(

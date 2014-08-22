@@ -1,17 +1,53 @@
+var chartBeatModule;
+
 $(document).ready(function() {
   Waves.displayEffect();
+
+  var comscoreConfig = {
+    site: "businessweek",
+    author: "Claire Suddath",
+    ctype: "graphic",
+    cg1: "Lifestyle",
+    name: "This is a quiz test",
+    pubDate: "20140825"
+  }
+
+  var urlHash = window.location.hash
+
+  var comscore = Comscore(comscoreConfig)
+  comscore.track(urlHash)
+  comscore.trackPageview()
+
+  var _sf_async_config= {uid: 15087, domain: "www.businessweek.com"};
+  _sf_async_config.useCanonical = true;
+  
+  _sf_async_config.sections = "Lifestyle";
+  _sf_async_config.authors = "Claire Suddath";
+  
+  
+  (function(){
+    function loadChartbeat() {
+      window._sf_endpt=(new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src',
+        (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://") + "static.chartbeat.com/js/chartbeat_pub.js");
+      document.body.appendChild(e);
+    }
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
 
 
   //chartbeat code
 
-  var module = new bloomberg.common.analytics.chartbeat.View({
-    domain: "www.businessweek.com",
-    uid: 15087
-  });
+  // chartBeatModule = new bloomberg.common.analytics.chartbeat.View({
+  //   domain: "www.businessweek.com",
+  //   uid: 15087,
+  //   author: "test"
+  // });
 
-
-
-  $('body').append(module.render().el)
 
   $('.popup-twitter').click(function(event) {
     event.preventDefault()

@@ -38,6 +38,7 @@
   <link rel="stylesheet" href="css/bbw.css">
   <script src="js/vendor/modernizr-2.6.2.min.js"></script>
   <script src="js/vendor/enquire.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
 
   <!-- Google Analytics -->
   <script>
@@ -48,13 +49,13 @@
 
     ga('create', 'UA-48575462-1', 'bizweekgraphics.com');
     ga('send', 'pageview');
-
   </script>
 </head>
 
 <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
 
 <body onload="loaded()">
+
 <div class="body-wrapper">
 
 <div class='ad-div banner_ad non_blank_ad' id='leader_board'>
@@ -92,6 +93,8 @@
     <a href="http://www.businessweek.com/media"><li id="video">Video &<br> Multimedia</li></a>
   </ul>
 </nav>
+
+<div class="test"></div>
 
   <script type="text/html" id="quizTemplate">
   <div class="slide question" data-slideindex="<%= q.id %>">
@@ -132,13 +135,12 @@
 
   </script>
 
+ 
   <script src="js/vendor/jquery-1.10.2.min.js"></script>
   <script src="js/vendor/responsive-nav.js"></script>
   <script src="js/vendor/waves.js"></script>
   <script src="js/vendor/underscore-min.js"></script>
-  <script src="js/vendor/backbone.min.js"></script>
-  <script src="js/vendor/bloomberg.base.js"></script>
-  <script src="js/vendor/chartbeat-module.js"></script>
+  <script src="js/vendor/comscore.js"></script>
   <script src="js/main.js"></script>
 
 <script>
@@ -263,21 +265,7 @@ $iframe.parentNode.setAttribute('style', 'height:' + $iframe.getAttribute('heigh
     // == End of Google Publisher Tags ===============================
   </script>
 
-  <!-- BEGIN COMSCORE -->
-  <script>
-    BBBW_comScore.params = {"bb_groupid":"","bb_c_type":"___[www story for standard article or story for Magazine content]____","bb_attributor":"","bb_pub_d":"____[PUBDATE]____","bb_cg_1":"____[CHANNEL]____","bb_cg_2":"","bb_cg_3":"____[HEADLINE]____","bb_author":"____[AUTHOR]____","content_goognews":"0"};
-    if (_BUCKET != "" && _BUCKET_GROUP != ""){
-      BBBW_comScore.params['bb_bucket']       = _BUCKET;
-      BBBW_comScore.params['bb_bucket_group'] = _BUCKET_GROUP;
-    }
-    BBBW_comScore.track();
-    BBBW_comScore.write_cookie(comScore_track_key,"",-1);
-  </script>
-  <noscript>
-  <p>
-  <img alt='*' height='1' src='http://b.scorecardresearch.com/p?c1=2&amp;amp;c2=3005059' width='1'>
-  </p>
-  </noscript>
+
 
 
 
@@ -286,3 +274,11 @@ $iframe.parentNode.setAttribute('style', 'height:' + $iframe.getAttribute('heigh
 
 </body>
 </html>
+
+
+
+
+
+
+
+
