@@ -346,8 +346,7 @@ function loaded () {
   $("#start").click(function(e) {
     var button = $(e.target);
 
-    ga('send', 'event', 'start-button', 'click')
-    ga('send', 'event', 'button', 'click', 'nav-buttons');
+    ga('send', 'event', 'start-button', 'click', "start-click")
 
 
 
@@ -416,6 +415,7 @@ function loaded () {
     var nextSlide = button.data("nextslide") ? button.data("nextslide") : slide.data("slideindex")+1;
 
     if(nextSlide === 9) {
+      ga('send', 'event', 'on-outro', 'click', "quiz-finish")
       setTimeout(function() {
         $('.slide[data-slideindex="'+nextSlide+'"]').show(); 
         $('.popup').click(function(event) {
