@@ -325,7 +325,7 @@ function loaded () {
             },
             {
                 "button": "No",
-                "text": "Stand up straight. A Harvard Business School study says it will make you <a target='_blank' href='https://research.hks.harvard.edu/publications/getFile.aspx?Id=306'>look more powerful</a>.",
+                "text": "Stand up straight. A Harvard Business School study says it will make you <a target='_blank' href='http://202.154.59.182/ejournal/files/Gender%20in%20Job%20Negotiations.pdf'>look more powerful</a>.",
                 "points": -1
             }
         ]
