@@ -40,15 +40,6 @@ $(document).ready(function() {
   })();
 
 
-  //chartbeat code
-
-  // chartBeatModule = new bloomberg.common.analytics.chartbeat.View({
-  //   domain: "www.businessweek.com",
-  //   uid: 15087,
-  //   author: "test"
-  // });
-
-
   $('.popup-twitter').click(function(event) {
     event.preventDefault()
     var textString = "I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too."
