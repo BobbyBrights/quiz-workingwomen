@@ -70,7 +70,7 @@ $(document).ready(function() {
         top    = ($(window).height() - height) / 2,
         articleUrl = encodeURIComponent("http://businessweek.com"),
         // url    = $(this).attr('href') + text + "&url=" + articleUrl
-        url = "https://www.linkedin.com/shareArticle?summary=I+just+took+Businessweek%27s+Can+Women+Ever+Get+Ahead+at+Work+quiz%2C+and+you+should+too%2E&title=Can+a+Woman+Ever+Win+at+Work%3F&mini=true&url=" + encodeURIComponent(document.URL)
+        url = "http://www.linkedin.com/shareArticle?summary=I+just+took+Businessweek%27s+Can+Women+Ever+Get+Ahead+at+Work+quiz%2C+and+you+should+too%2E&title=Can+a+Woman+Ever+Win+at+Work%3F&mini=true&url=" + encodeURIComponent(document.URL)
         opts   = 'status=1' +
                  ',width='  + width  +
                  ',height=' + height +
