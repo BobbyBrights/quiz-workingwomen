@@ -48,7 +48,7 @@ $(document).ready(function() {
         height = 400,
         left   = ($(window).width()  - width)  / 2,
         top    = ($(window).height() - height) / 2,
-        url    = $(this).attr('href') + text + "&url" + document.URL,
+        url    = $(this).attr('href') + text + "&url=" + document.URL,
         opts   = 'status=1' +
                  ',width='  + width  +
                  ',height=' + height +
@@ -245,7 +245,7 @@ function loaded () {
             },
             {
                 "button": "No",
-                "text": "Could you be? University of Queensland researchers found <a target='_blank' href='http://faculty-course.insead.edu/popescu/UDJCore/XtraMaterial/Physical%20appearance%20and%20wages%20Do%20blondes%20have%20more%20fun.pdf'>blonds make 7% more</a>.",
+                "text": "Could you be? University of Queensland researchers found <a target='_blank' href='http://faculty-course.insead.edu/popescu/UDJCore/XtraMaterial/Physical%20appearance%20and%20wages%20Do%20blondes%20have%20more%20fun.pdf'>blondes make 7% more</a>.",
                 "points": -1
             }
         ]
@@ -320,7 +320,7 @@ function loaded () {
         "choices": [
             {
                 "button": "Yes",
-                "text": "A Harvard Business School study says you’ll <a target='_blank' href='https://research.hks.harvard.edu/publications/getFile.aspx?Id=306'>look more powerful</a>.",
+                "text": "A Harvard Business School study says you’ll <a target='_blank' href='http://202.154.59.182/ejournal/files/Gender%20in%20Job%20Negotiations.pdf'>look more powerful</a>.",
                 "points": 1
             },
             {
