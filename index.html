@@ -9,11 +9,11 @@
   <title>Can a woman ever win at work? - Businessweek</title>
   <meta name="description" content="It’s hard enough for a working woman, and now a new study from UNC’s Kenan Flager School of Business found many struggles over promotion and raises may be out of a gal’s control. Take this easy quiz to determine just how screwed you might be, culled from the endless academic research on office gender dynamics.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-  
+
 
   <meta name="twitter:card" content="photo">
   <meta name="twitter:site" content="businessweek">
-  <meta name="twitter:creator" content="tophtucker">
+  <meta name="twitter:creator" content="clairesuddath">
   <meta name="twitter:title" content="Can a Woman Ever Win at Work?">
   <meta name="twitter:description" content="I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too." />
 
@@ -26,7 +26,7 @@
   <meta property="og:title" content="Can a Woman Ever Win at Work?" />
   <meta property="og:description" content="I just took Businessweek's Can Women Ever Get Ahead at Work quiz, and you should too." />
   <meta name='og:image' content='http://s3-us-west-2.amazonaws.com/graphics-images/0825_working_women_970.jpg'>
-  
+
 
   <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
   <link href="apple-touch-icon-precomposed.png" rel="apple-touch-icon" type="image/png" />
@@ -138,7 +138,7 @@
 
   </script>
 
- 
+
   <script src="js/vendor/jquery-1.10.2.min.js"></script>
   <script src="js/vendor/responsive-nav.js"></script>
   <script src="js/vendor/waves.js"></script>
@@ -206,7 +206,7 @@ if(window.innerWidth > 895) {
       //googletag.pubads().collapseEmptyDivs();
       googletag.pubads().enableAsyncRendering();
       googletag.pubads().enableSingleRequest();
-      googletag.enableServices();      
+      googletag.enableServices();
     });
     var global_ad_options = {
        url: window.location.pathname,
@@ -225,13 +225,13 @@ if(window.innerWidth > 895) {
             var ad_attributes = {
               position : ac.getAttribute('data-position'),
               size_array : ac.getAttribute('data-gpt-size'),
-              ad_size : ac.getAttribute('data-size'), 
+              ad_size : ac.getAttribute('data-size'),
               tile : ac.getAttribute('data-tile'),
               ist : ac.getAttribute('data-tile') == "1" ? "dcopt=ist;" : "",
               pt : ac.getAttribute('data-position'),
               tz : ac.getAttribute('data-tz'),
               yield_ex_string : (YIELDEX ? (ac.getAttribute('data-size')+ "|" + ac.getAttribute('data-position') + "|" + ac.getAttribute('data-tz') + "|" + global_ad_options.keyword ) : "")
-            };            
+            };
             googletag.on && googletag.on('gpt-slot_rendered', function(e, level, message, service, slot, reference) {
               var $iframe;
     var body_content;
@@ -252,17 +252,17 @@ if(window.innerWidth > 895) {
             body_content = $iframe_content[0].innerHTML || '';
             found_ad_response = (body_content.replace(/^\s+|\s+$/g, '') != '');
           }
-          if (found_ad_response) {                  
+          if (found_ad_response) {
                    $slot.parentNode.setAttribute('style', 'height:' + $iframe.getAttribute('height') + 'px');
                    $slot.setAttribute('style', 'height:' + $iframe.getAttribute('height') + 'px');
 $iframe.setAttribute('style', 'height:' + $iframe.getAttribute('height') + 'px');
 $iframe.parentNode.setAttribute('style', 'height:' + $iframe.getAttribute('height') + 'px');
 
           }
-              
+
             });
             googletag.cmd.push(function() {  googletag.display( ad_attributes.position );  });
-          }          
+          }
       });
 
     }
@@ -275,11 +275,11 @@ $iframe.parentNode.setAttribute('style', 'height:' + $iframe.getAttribute('heigh
 
   var _sf_async_config= {uid: 15087, domain: "www.businessweek.com"};
   _sf_async_config.useCanonical = true;
-  
+
   _sf_async_config.sections = "Lifestyle";
   _sf_async_config.authors = "Claire Suddath";
-  
-  
+
+
   (function(){
     function loadChartbeat() {
       window._sf_endpt=(new Date()).getTime();
@@ -305,11 +305,3 @@ $iframe.parentNode.setAttribute('style', 'height:' + $iframe.getAttribute('heigh
 
 </body>
 </html>
-
-
-
-
-
-
-
-
